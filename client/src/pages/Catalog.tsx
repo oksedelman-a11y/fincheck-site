@@ -10,7 +10,6 @@ export default function Catalog() {
   const searchParams = new URLSearchParams(searchString);
   const initialLevel = searchParams.get('level');
   
-  // Custom minimal local state since wouter's useSearch is basic
   const [activeFilter, setActiveFilter] = useState<string | null>(initialLevel || null);
 
   const filteredProducts = activeFilter 
@@ -18,7 +17,7 @@ export default function Catalog() {
     : products;
 
   const levels = [
-    { id: 'A0', label: 'A0: Экспресс' },
+    { id: 'A0', label: 'Входной аудит (FinCheck)' },
     { id: 'A', label: 'Уровень A (Основа)' },
     { id: 'B', label: 'Уровень B (Операции)' }
   ];
@@ -26,9 +25,10 @@ export default function Catalog() {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">Каталог услуг</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Каталог решений</h1>
         <p className="text-muted-foreground max-w-2xl">
-          Стандартизированные продукты управленческой диагностики с понятными границами, входом и выходом.
+          Стандартизированные продукты управленческой диагностики. 
+          <strong> Вход в систему всегда осуществляется через базовый аудит FinCheck (A0).</strong>
         </p>
       </div>
 
@@ -62,9 +62,9 @@ export default function Catalog() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filteredProducts.map((product) => (
           <Link key={product.id} href={`/product/${product.id}`}>
-            <a className="group block border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-sm" data-testid={`card-product-${product.code}`}>
+            <a className={`group block border bg-card p-6 transition-all hover:border-primary hover:shadow-sm ${product.level === 'A0' ? 'border-primary border-l-4 shadow-sm' : ''}`} data-testid={`card-product-${product.code}`}>
               <div className="flex justify-between items-start mb-4">
-                <Badge variant="secondary" className="rounded-none font-mono font-bold px-2 py-1">
+                <Badge variant={product.level === 'A0' ? 'default' : 'secondary'} className="rounded-none font-mono font-bold px-2 py-1">
                   {product.code}
                 </Badge>
                 <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />

@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-display font-bold text-xl tracking-tight">Упр.Диагностика</span>
+            <span className="font-display font-bold text-xl tracking-tight">FinCheck</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             {navLinks.map((link) => (
@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/catalog">
             <a className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Запросить аудит
+              Запросить FinCheck
             </a>
           </Link>
         </div>
