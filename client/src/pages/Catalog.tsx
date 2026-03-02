@@ -13,13 +13,15 @@ export default function Catalog() {
   const [activeFilter, setActiveFilter] = useState<string | null>(initialLevel || null);
 
   const filteredProducts = activeFilter 
-    ? products.filter(p => p.level.startsWith(activeFilter))
+    ? products.filter(p => p.level === activeFilter) // strict match to avoid A matching A0
     : products;
 
   const levels = [
     { id: 'A0', label: 'Входной аудит (FinCheck)' },
-    { id: 'A', label: 'Уровень A (Основа)' },
-    { id: 'B', label: 'Уровень B (Операции)' }
+    { id: 'A', label: 'Уровень A (Ликвидность)' },
+    { id: 'B', label: 'Уровень B (Фин. Архитектура)' },
+    { id: 'C', label: 'Уровень C (Интеграция)' },
+    { id: 'D', label: 'Уровень D (Сопровождение)' }
   ];
 
   return (
@@ -27,18 +29,17 @@ export default function Catalog() {
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Каталог решений</h1>
         <p className="text-muted-foreground max-w-2xl">
-          Стандартизированные продукты управленческой диагностики. 
-          <strong> Вход в систему всегда осуществляется через базовый аудит FinCheck (A0).</strong>
+          Системная архитектура управленческой диагностики. Вы можете начать с опционального входного аудита <strong>FinCheck (A0)</strong> для точной калибровки проблемы, либо перейти сразу к нужным модулям.
         </p>
       </div>
 
-      <div className="flex items-center gap-4 pb-4 border-b">
-        <Filter className="w-4 h-4 text-muted-foreground" />
-        <div className="flex flex-wrap gap-2">
+      <div className="flex items-center gap-4 pb-4 border-b overflow-x-auto whitespace-nowrap">
+        <Filter className="w-4 h-4 text-muted-foreground shrink-0" />
+        <div className="flex gap-2">
           <Button 
             variant={activeFilter === null ? "default" : "outline"}
             size="sm"
-            className="rounded-none h-8"
+            className="rounded-none h-8 shrink-0"
             onClick={() => setActiveFilter(null)}
             data-testid="filter-all"
           >
@@ -49,7 +50,7 @@ export default function Catalog() {
               key={level.id}
               variant={activeFilter === level.id ? "default" : "outline"}
               size="sm"
-              className="rounded-none h-8"
+              className="rounded-none h-8 shrink-0"
               onClick={() => setActiveFilter(level.id)}
               data-testid={`filter-${level.id}`}
             >
@@ -59,29 +60,27 @@ export default function Catalog() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProducts.map((product) => (
           <Link key={product.id} href={`/product/${product.id}`}>
-            <a className={`group block border bg-card p-6 transition-all hover:border-primary hover:shadow-sm ${product.level === 'A0' ? 'border-primary border-l-4 shadow-sm' : ''}`} data-testid={`card-product-${product.code}`}>
-              <div className="flex justify-between items-start mb-4">
-                <Badge variant={product.level === 'A0' ? 'default' : 'secondary'} className="rounded-none font-mono font-bold px-2 py-1">
-                  {product.code}
-                </Badge>
-                <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+            <a className={`group flex flex-col justify-between border bg-card p-6 transition-all hover:border-primary hover:shadow-sm ${product.level === 'A0' ? 'border-primary border-l-4 shadow-sm' : ''}`} data-testid={`card-product-${product.code}`}>
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <Badge variant={product.level === 'A0' ? 'default' : 'secondary'} className="rounded-none font-mono font-bold px-2 py-1">
+                    {product.code}
+                  </Badge>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 tracking-tight leading-tight">{product.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
+                  {product.shortDescription}
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3 tracking-tight">{product.title}</h3>
-              <p className="text-sm text-muted-foreground mb-6 line-clamp-2">
-                {product.shortDescription}
-              </p>
               
-              <div className="grid grid-cols-2 gap-4 text-sm pt-4 border-t border-border/50">
+              <div className="grid grid-cols-1 gap-3 text-sm pt-4 border-t border-border/50 mt-auto">
                 <div>
                   <span className="block text-xs text-muted-foreground mb-1 uppercase tracking-wider">Единица продукта</span>
-                  <span className="font-medium truncate block">{product.unitOfProduct}</span>
-                </div>
-                <div>
-                  <span className="block text-xs text-muted-foreground mb-1 uppercase tracking-wider">Роль</span>
-                  <span className="font-medium truncate block">{product.role}</span>
+                  <span className="font-medium line-clamp-1">{product.unitOfProduct}</span>
                 </div>
               </div>
             </a>

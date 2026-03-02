@@ -26,7 +26,7 @@ export default function Methodology() {
       </section>
 
       <section className="bg-secondary/30 p-8 md:p-12 border border-border/50">
-        <h2 className="text-2xl font-bold mb-6">Триггеры для диагностики</h2>
+        <h2 className="text-2xl font-bold mb-6">Триггеры для привлечения аналитика</h2>
         <p className="mb-8 text-muted-foreground">Ситуации, когда внутренний ресурс для решения проблемы исчерпан:</p>
         
         <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6">
@@ -40,8 +40,8 @@ export default function Methodology() {
           <div className="flex gap-4">
             <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
             <div>
-              <h4 className="font-bold text-sm mb-1">Смена топ-менеджмента</h4>
-              <p className="text-sm text-muted-foreground">Необходимость получить объективный срез "наследства" перед передачей дел.</p>
+              <h4 className="font-bold text-sm mb-1">Кассовые разрывы</h4>
+              <p className="text-sm text-muted-foreground">Прибыль на бумаге есть, а денег на счетах постоянно не хватает.</p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -54,24 +54,27 @@ export default function Methodology() {
           <div className="flex gap-4">
             <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
             <div>
-              <h4 className="font-bold text-sm mb-1">Подготовка к M&A</h4>
-              <p className="text-sm text-muted-foreground">Приведение системы в прозрачный вид перед слиянием, поглощением или инвестициями.</p>
+              <h4 className="font-bold text-sm mb-1">Подготовка к масштабированию</h4>
+              <p className="text-sm text-muted-foreground">Приведение системы в прозрачный вид перед привлечением инвестиций или запуском новых направлений.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-6">Честные ограничения</h2>
+        <h2 className="text-2xl font-bold mb-6">Честные ограничения нашей ответственности</h2>
         <div className="border-l-4 border-muted pl-6 py-2 space-y-4 text-muted-foreground">
           <p>
-            <strong className="text-foreground font-semibold">Мы не принимаем решения за вас.</strong> Наш продукт — ясность и прозрачность. Решения на базе этой ясности принимает собственник или CEO.
+            <strong className="text-foreground font-semibold">Мы не принимаем решения за вас.</strong> Наш продукт — прозрачность и ясность. Решения на базе этой ясности принимает собственник или CEO. Мы не заменяем вашу управленческую волю.
           </p>
           <p>
-            <strong className="text-foreground font-semibold">Диагностика — это не внедрение.</strong> Разработка целевой схемы (To-Be) и её внедрение — это разные продукты. Внедрение требует иных ресурсов и управления сопротивлением среды.
+            <strong className="text-foreground font-semibold">Диагностика — это не внедрение.</strong> Мы проектируем архитектуру (To-Be). Физическое внедрение в 1С или ERP-системы осуществляют ваши ИТ-специалисты или внешние интеграторы (мы можем осуществлять только надзор на уровне продукта D1).
           </p>
           <p>
-            <strong className="text-foreground font-semibold">Качество на входе = качество на выходе.</strong> Если предоставленные данные намеренно искажены, выводы будут отражать это искажение.
+            <strong className="text-foreground font-semibold">Качество на входе = качество на выходе.</strong> Если предоставленные финансовые или операционные данные намеренно искажены командой, наши выводы будут отражать это искажение. Мы работаем с тем, что вы нам предоставляете.
+          </p>
+          <p>
+            <strong className="text-foreground font-semibold">Мы не налоговые консультанты.</strong> Наша задача — управленческая логика. Мы не оптимизируем налогообложение и не строим "серые" схемы.
           </p>
         </div>
       </section>

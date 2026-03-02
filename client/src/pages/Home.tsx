@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Activity, GitCommit, Search, Briefcase, AlertTriangle, Scale, Target, ShieldAlert, XOctagon } from "lucide-react";
+import { ArrowRight, Activity, GitCommit, Search, Briefcase, AlertTriangle, Scale, Target, ShieldAlert, XOctagon, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
 
@@ -55,7 +55,7 @@ export default function Home() {
             </li>
             <li className="flex gap-4">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0" />
-              <span>Симптомы путаются с первопричинами (например, лечат продажи, когда проблема в продукте или логистике).</span>
+              <span>Симптомы путаются с первопричинами (например, лечат продажи, когда проблема кроется в структуре потоков).</span>
             </li>
           </ul>
         </div>
@@ -80,136 +80,170 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. What FinCheck is & 4. Format */}
-      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">3. Система FinCheck</h2>
-          <h3 className="text-3xl font-bold tracking-tight mb-6">Структурированная <br/>диагностика</h3>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            FinCheck — это не консалтинг ради консалтинга. Это инструмент получения объективной, независимой картины бизнеса. Внешний диагност свободен от корпоративной политики и способен указать на системные ошибки.
-          </p>
-          <div className="grid grid-cols-2 gap-6 pt-4">
-            <div>
-              <Search className="w-6 h-6 mb-3 text-primary" />
-              <h4 className="font-bold text-sm mb-2">Независимость</h4>
-              <p className="text-sm text-muted-foreground">Отсутствие конфликта интересов внутри компании.</p>
-            </div>
-            <div>
-              <GitCommit className="w-6 h-6 mb-3 text-primary" />
-              <h4 className="font-bold text-sm mb-2">Системность</h4>
-              <p className="text-sm text-muted-foreground">Анализ взаимосвязей, а не изолированных функций.</p>
+      {/* 3. What FinCheck is (Positioning) */}
+      <section className="border-t pt-16">
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">3. Система FinCheck</h2>
+            <h3 className="text-3xl font-bold tracking-tight mb-6">Структурированная <br/>диагностика</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              FinCheck — это не консалтинг ради консалтинга. Это инструмент получения объективной, независимой картины бизнеса. Внешний диагност свободен от корпоративной политики и способен указать на системные ошибки.
+            </p>
+            <div className="grid grid-cols-2 gap-6 pt-4">
+              <div>
+                <Search className="w-6 h-6 mb-3 text-primary" />
+                <h4 className="font-bold text-sm mb-2">Независимость</h4>
+                <p className="text-sm text-muted-foreground">Отсутствие конфликта интересов внутри компании.</p>
+              </div>
+              <div>
+                <GitCommit className="w-6 h-6 mb-3 text-primary" />
+                <h4 className="font-bold text-sm mb-2">Системность</h4>
+                <p className="text-sm text-muted-foreground">Анализ взаимосвязей, а не изолированных функций.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">4. Формат и этапы</h2>
-          <h3 className="text-2xl font-bold tracking-tight mb-8">Как мы работаем</h3>
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-4 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-border">
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full border border-primary bg-background shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-mono text-sm font-bold">1</div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] p-4 border bg-card">
-                <h4 className="font-bold text-sm">Вводная сессия</h4>
-                <p className="text-sm text-muted-foreground mt-1">Определение симптомов (15 мин).</p>
-              </div>
+          <div className="bg-card border p-8 shadow-sm">
+            <h3 className="text-xl font-bold tracking-tight mb-6 flex items-center gap-2">
+              <ShieldAlert className="w-5 h-5 text-primary" />
+              Чем мы НЕ являемся
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-start text-sm">
+                <XCircle className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-foreground">Не классический аудит</strong>
+                  <span className="text-muted-foreground">Мы не проверяем правильность проводок для налоговой. Мы проверяем управленческий смысл.</span>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start text-sm">
+                <XCircle className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-foreground">Не аутсорсинг учета</strong>
+                  <span className="text-muted-foreground">Мы проектируем архитектуру, но не вводим первичку руками за вас.</span>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start text-sm">
+                <XCircle className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-foreground">Не внедренцы 1С</strong>
+                  <span className="text-muted-foreground">Мы описываем бизнес-логику для автоматизации, а не пишем код.</span>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start text-sm">
+                <XCircle className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-foreground">Не "CFO в аренду"</strong>
+                  <span className="text-muted-foreground">Мы строим систему, которая будет работать на вас, а не подсаживаем на постоянную иглу наших услуг.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Client Journey Schema */}
+      <section className="border-t pt-16">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center">4. Клиентский путь</h2>
+        <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Архитектура движения</h3>
+        
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-2">
+            
+            {/* A0 */}
+            <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 1: КАЛИБРОВКА</div>
+              <h4 className="font-bold text-lg mb-2">A0: FinCheck</h4>
+              <p className="text-sm text-muted-foreground">Опциональный входной аудит. Поиск корневой проблемы и постановка точного диагноза.</p>
+              <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full border border-border bg-background shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-mono text-sm font-bold">2</div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] p-4 border bg-card">
-                <h4 className="font-bold text-sm">A0: FinCheck Аудит</h4>
-                <p className="text-sm text-muted-foreground mt-1">Обязательный первичный срез.</p>
+
+            {/* A / B */}
+            <div className="flex-1 flex flex-col gap-2 relative">
+              <div className="bg-primary text-primary-foreground p-6">
+                <div className="text-xs font-mono font-bold mb-2 opacity-80">ШАГ 2: ПРОЕКТИРОВАНИЕ</div>
+                <h4 className="font-bold text-lg mb-2">Уровни A и B</h4>
+                <p className="text-sm opacity-90">Внедрение целевых модулей: Ликвидность (A) и Финансовая Архитектура (B).</p>
               </div>
+              <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full border border-border bg-background shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-mono text-sm font-bold">3</div>
-              <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] p-4 border bg-card">
-                <h4 className="font-bold text-sm">Глубокая диагностика</h4>
-                <p className="text-sm text-muted-foreground mt-1">Уровни A и B по узким местам.</p>
-              </div>
+
+            {/* C */}
+            <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 3: СБОРКА</div>
+              <h4 className="font-bold text-lg mb-2">Уровень C</h4>
+              <p className="text-sm text-muted-foreground">Связка разрозненных модулей в единый интегрированный контур управления.</p>
+              <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
+
+            {/* D */}
+            <div className="flex-1 bg-secondary/10 border border-dashed border-primary/50 p-6">
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 4: ВНЕДРЕНИЕ</div>
+              <h4 className="font-bold text-lg mb-2">Уровень D</h4>
+              <p className="text-sm text-muted-foreground">Методологическое сопровождение команды заказчика (Adviser) при автоматизации.</p>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* 5. Catalog Hierarchy */}
       <section className="border-t pt-16">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center">5. Архитектура продуктов</h2>
-        <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Иерархия решений</h3>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center">5. Каталог продуктов</h2>
+        <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Структура решений</h3>
         
-        <div className="max-w-4xl mx-auto space-y-4">
-          <div className="bg-primary text-primary-foreground p-6 md:p-8 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
-            <div>
-              <div className="text-xs font-mono font-bold mb-2 opacity-80">ОБЯЗАТЕЛЬНЫЙ ВХОД</div>
-              <h4 className="text-2xl font-bold mb-2">A0: Экспресс-аудит (FinCheck)</h4>
-              <p className="opacity-90 max-w-xl">Быстрая калибровка системы, постановка диагноза и определение, нужна ли глубокая экспертиза.</p>
-            </div>
-            <Link href="/product/a0-fincheck">
-              <Button variant="secondary" className="rounded-none shrink-0 text-secondary-foreground font-bold">Подробнее</Button>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          
+          <div className="border border-border p-6 md:p-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-6xl font-bold tracking-tighter">A0</div>
+            <h4 className="text-xl font-bold mb-2">Входной аудит (FinCheck)</h4>
+            <p className="text-sm text-muted-foreground mb-6 max-w-[85%]">Опциональная экспресс-диагностика для локализации проблемы.</p>
+            <Link href="/catalog?level=A0">
+              <Button variant="outline" size="sm" className="rounded-none">Смотреть продукт</Button>
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="border bg-secondary/10 p-6 md:p-8">
-              <div className="text-xs font-mono font-bold mb-2 text-muted-foreground">ФУНДАМЕНТ</div>
-              <h4 className="text-xl font-bold mb-2">Уровень A (Основа)</h4>
-              <p className="text-sm text-muted-foreground mb-6">Оргструктура, команды, стратегия.</p>
-              <div className="space-y-3">
-                <Link href="/product/a1-org-audit"><a className="block text-sm font-medium hover:text-primary transition-colors border-b pb-2">&rarr; A1: Аудит оргструктуры</a></Link>
-                <Link href="/product/a2-mgmt-team"><a className="block text-sm font-medium hover:text-primary transition-colors border-b pb-2">&rarr; A2: Оценка команды</a></Link>
+          <div className="border border-border p-6 md:p-8 bg-secondary/10 relative overflow-hidden">
+             <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-6xl font-bold tracking-tighter">A</div>
+            <h4 className="text-xl font-bold mb-2">Уровень A (Ликвидность)</h4>
+            <p className="text-sm text-muted-foreground mb-6 max-w-[85%]">Контроль денежных потоков: управление ДЗ, КЗ и платежная дисциплина.</p>
+            <Link href="/catalog?level=A">
+              <Button variant="outline" size="sm" className="rounded-none">3 модуля</Button>
+            </Link>
+          </div>
+
+          <div className="border border-border p-6 md:p-8 bg-primary text-primary-foreground relative overflow-hidden">
+             <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-6xl font-bold tracking-tighter">B</div>
+            <h4 className="text-xl font-bold mb-2">Уровень B (Фин. Архитектура)</h4>
+            <p className="text-sm opacity-90 mb-6 max-w-[85%]">P&L, Cash Flow, Баланс, Финмодель, Регламенты и Договорная логика.</p>
+            <Link href="/catalog?level=B">
+              <Button variant="secondary" size="sm" className="rounded-none font-bold text-secondary-foreground">7 модулей</Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="border border-border p-6 flex flex-col justify-between relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-6xl font-bold tracking-tighter">C</div>
+              <div>
+                <h4 className="font-bold mb-2">Уровень C</h4>
+                <p className="text-xs text-muted-foreground">Интегрированный контур управления.</p>
               </div>
+              <Link href="/catalog?level=C" className="text-sm font-medium hover:text-primary mt-4 inline-flex items-center">&rarr; Подробнее</Link>
             </div>
-            
-            <div className="border bg-secondary/10 p-6 md:p-8">
-              <div className="text-xs font-mono font-bold mb-2 text-muted-foreground">ОПЕРАЦИИ</div>
-              <h4 className="text-xl font-bold mb-2">Уровень B (Процессы)</h4>
-              <p className="text-sm text-muted-foreground mb-6">Бизнес-процессы, IT-архитектура.</p>
-              <div className="space-y-3">
-                <Link href="/product/b1-process"><a className="block text-sm font-medium hover:text-primary transition-colors border-b pb-2">&rarr; B1: Аудит бизнес-процессов</a></Link>
-                <Link href="/product/b3-it-audit"><a className="block text-sm font-medium hover:text-primary transition-colors border-b pb-2">&rarr; B3: ИТ-аудит</a></Link>
+            <div className="border border-border border-dashed p-6 flex flex-col justify-between relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-6xl font-bold tracking-tighter">D</div>
+              <div>
+                <h4 className="font-bold mb-2">Уровень D</h4>
+                <p className="text-xs text-muted-foreground">Методологическое сопровождение (Adviser).</p>
               </div>
+              <Link href="/catalog?level=D" className="text-sm font-medium hover:text-primary mt-4 inline-flex items-center">&rarr; Подробнее</Link>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* 6. Methodology Limits & 7. Boundaries */}
-      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">6. Принципы</h2>
-          <h3 className="text-2xl font-bold tracking-tight mb-6">Методология</h3>
-          <ul className="space-y-6">
-            <li>
-              <h4 className="font-bold flex items-center gap-2 mb-2"><Scale className="w-4 h-4"/> Доказательность</h4>
-              <p className="text-sm text-muted-foreground">Выводы на фактах и метриках, а не мнениях.</p>
-            </li>
-            <li>
-              <h4 className="font-bold flex items-center gap-2 mb-2"><Target className="w-4 h-4"/> Системность</h4>
-              <p className="text-sm text-muted-foreground">Ни один процесс не рассматривается в вакууме.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="bg-destructive/5 border border-destructive/20 p-8">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-destructive mb-4">7. Границы</h2>
-          <h3 className="text-2xl font-bold tracking-tight mb-6">Честные ограничения</h3>
-          <ul className="space-y-4 text-sm text-muted-foreground">
-            <li className="flex gap-3">
-              <XOctagon className="w-5 h-5 text-destructive shrink-0" />
-              <span><strong>Мы не принимаем решения за вас.</strong> Наш продукт — ясность.</span>
-            </li>
-            <li className="flex gap-3">
-              <XOctagon className="w-5 h-5 text-destructive shrink-0" />
-              <span><strong>Диагностика ≠ Внедрение.</strong> Мы проектируем архитектуру, внедряет ваша команда или специализированные подрядчики.</span>
-            </li>
-            <li className="flex gap-3">
-              <XOctagon className="w-5 h-5 text-destructive shrink-0" />
-              <span><strong>Искаженные данные = искаженные выводы.</strong> Заказчик отвечает за полноту информации.</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      {/* 8. CTA */}
+      {/* 6. CTA */}
       <section className="border-t pt-16 flex flex-col items-center text-center">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-balance">
           Перестаньте лечить симптомы. <br/>Найдите корневую проблему.
@@ -219,7 +253,7 @@ export default function Home() {
         </p>
         <Link href="/catalog">
           <Button size="lg" className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all">
-            Запросить FinCheck
+            Смотреть полный каталог
           </Button>
         </Link>
       </section>
