@@ -1,0 +1,114 @@
+Task: Refactor Home Page Content Without Changing Architecture
+
+Do NOT rebuild layout or components.
+Preserve current design system, spacing, typography and visual structure.
+
+1. Keep From Current Version:
+
+Client Journey block (A0 → A/B → C → D visual schema)
+
+Full structured Product Catalog architecture (Levels A, B, C, D)
+
+Filtering and internal catalog logic
+
+Navigation and routing
+
+Footer structure
+
+2. Replace Home Page Text Content Using PDF Copy (Almost Verbatim)
+
+Rewrite the Home page content to closely follow the uploaded “Emergent v3” structure with minimal editing.
+
+Order of blocks must be:
+
+HERO
+
+Когда в бизнесе есть данные, люди и отчёты,
+но нет ясности.
+
+FinCheck — управленческая диагностика,
+которая возвращает целостную картину бизнеса
+и управляемость.
+
+Ясность через операционную и финансовую диагностику процессов.
+
+Primary CTA: Понять, что происходит
+Secondary CTA: Каталог услуг
+
+Блок: В какой момент нужна управленческая диагностика
+
+Keep wording very close to PDF:
+
+отчёты есть, но нет уверенности
+
+цифры противоречат
+
+решения принимаются интуитивно
+
+цена ошибки растёт
+
+рост есть, но система не выдерживает
+
+Блок: Что такое управленческая диагностика
+
+Structure:
+
+Это:
+• временное погружение
+• анализ ограниченного контура
+• работа с причинами
+• восстановление логики
+
+Это не:
+• внедрение
+• аутсорсинг управления
+• управление вместо собственника
+• обещание финансового результата
+
+Блок: Обо мне
+
+Use PDF version almost verbatim.
+Tone: спокойный, экспертный, без самопродажи.
+
+Блок: Как начинается работа
+
+Short structured steps:
+
+Контакт
+
+Формулировка контура
+
+Диагностика
+
+Выводы
+
+Блок: Честные рамки
+
+Keep the integrity positioning:
+
+можно ограничиться A0
+
+можно не продолжать
+
+диагностика ≠ обязательство на внедрение
+
+решения остаются за собственником
+
+3. Logo
+
+Keep colored FinCheck logo exactly in top-left navbar as currently positioned.
+Do not modify its placement or styling.
+
+4. Important
+
+Do NOT:
+
+change routing
+
+remove catalog page
+
+merge architecture
+
+rebuild components
+
+Only replace and reorganize text blocks on Home page.
