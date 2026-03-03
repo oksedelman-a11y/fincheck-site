@@ -11,7 +11,8 @@ import {
   TrendingUp,
   Map,
   Eye,
-  EyeOff
+  EyeOff,
+  Users
 } from "lucide-react";
 
 export default function Methodology() {
@@ -20,27 +21,43 @@ export default function Methodology() {
       <div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Метод и принципы</h1>
         <div className="bg-primary text-primary-foreground p-8 md:p-12 mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Я продаю не диагностику.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Услуга управленческой ясности бизнеса</h2>
           <p className="text-xl opacity-90 leading-relaxed max-w-2xl">
-            Я продаю восстановление управляемости бизнеса. Диагностика — это мой инструмент для достижения этой цели.
+            Цель — восстановление пригодной для решений картины.
           </p>
         </div>
       </div>
 
       <section className="grid md:grid-cols-2 gap-12 border-b pb-16">
         <div>
-          <h2 className="text-xl font-bold mb-4 font-mono uppercase tracking-widest text-muted-foreground text-sm">Что это за услуга</h2>
-          <h3 className="text-2xl font-bold mb-4">Услуга управленческой ясности бизнеса</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Цель — восстановление пригодной для решений картины. Мы убираем туман и неопределенность, заменяя их твердыми данными.
-          </p>
-        </div>
-        <div>
           <h2 className="text-xl font-bold mb-4 font-mono uppercase tracking-widest text-muted-foreground text-sm">Роль специалиста</h2>
           <h3 className="text-2xl font-bold mb-4">Внешний управленческий аналитик</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Свидетель управленческой реальности. Я не CFO, не COO и не штатный управленец. Моя задача — объективная фиксация фактов.
+            Свидетель управленческой реальности. Не CFO, не COO, не управленец внутри вашей структуры.
           </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-bold mb-4 font-mono uppercase tracking-widest text-muted-foreground text-sm">Целевая аудитория</h2>
+          <h3 className="text-2xl font-bold mb-4">Собственники и CEO</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Для тех, кто принимает стратегические решения и нуждается в твердой опоре на факты.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-secondary/30 p-8 md:p-12 border border-border/50">
+        <h2 className="text-xl font-bold mb-6">Когда услуга необходима</h2>
+        <div className="grid sm:grid-cols-2 gap-6">
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li className="flex gap-2"><span>•</span> отчёты есть, но нет уверенности</li>
+            <li className="flex gap-2"><span>•</span> цифры противоречат друг другу</li>
+            <li className="flex gap-2"><span>•</span> решения принимаются интуитивно</li>
+          </ul>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li className="flex gap-2"><span>•</span> цена ошибки в управлении растёт</li>
+            <li className="flex gap-2"><span>•</span> рост бизнеса идет без управляемости</li>
+            <li className="flex gap-2"><span>•</span> туман в процессах и отчетности</li>
+          </ul>
         </div>
       </section>
 
@@ -68,7 +85,7 @@ export default function Methodology() {
 
       <section className="grid md:grid-cols-2 gap-12 border-b pb-16">
         <div>
-          <h2 className="text-2xl font-bold mb-6">Результат</h2>
+          <h2 className="text-2xl font-bold mb-6">Результат и критерии качества</h2>
           <ul className="space-y-4">
             <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> ясная картина реальности</li>
             <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> выявленные корневые причины</li>
@@ -76,29 +93,23 @@ export default function Methodology() {
           </ul>
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-6 text-destructive">Честные рамки</h2>
+          <h2 className="text-2xl font-bold mb-6 text-destructive">Границы ответственности</h2>
           <ul className="space-y-4">
             <li className="flex gap-3 items-center"><ShieldAlert className="w-5 h-5 text-destructive"/> снижение неопределенности</li>
             <li className="flex gap-3 items-center"><ShieldAlert className="w-5 h-5 text-destructive"/> рост управляемости</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><XCircle className="w-5 h-5"/> не заменяем управление собственника</li>
+            <li className="flex gap-3 items-center text-muted-foreground"><XCircle className="w-5 h-5"/> не заменяем управленческую волю</li>
           </ul>
         </div>
       </section>
 
-      <section className="bg-secondary/30 p-8 border border-border/50">
-        <h2 className="text-xl font-bold mb-6">Когда необходима диагностика</h2>
-        <div className="grid sm:grid-cols-2 gap-6">
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><span>•</span> отчёты есть, но нет уверенности</li>
-            <li className="flex gap-2"><span>•</span> цифры противоречат</li>
-            <li className="flex gap-2"><span>•</span> решения интуитивны</li>
-          </ul>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><span>•</span> цена ошибки растёт</li>
-            <li className="flex gap-2"><span>•</span> рост без управляемости</li>
-            <li className="flex gap-2"><span>•</span> туман в процессах</li>
-          </ul>
-        </div>
+      <section className="border-l-4 border-muted pl-6 py-2 space-y-4 text-muted-foreground">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Ограничения и честные рамки</h2>
+        <p>
+          <strong className="text-foreground font-semibold">НЕ:</strong> внедрение, управление вместо собственника, гарантия финрезультата.
+        </p>
+        <p>
+          <strong className="text-foreground font-semibold">ДА:</strong> снижение неопределенности, рост управляемости, ясность для решений.
+        </p>
       </section>
     </div>
   );

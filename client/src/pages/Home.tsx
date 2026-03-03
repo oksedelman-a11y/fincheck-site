@@ -172,7 +172,7 @@ export default function Home() {
             <div className="font-bold tracking-tighter text-xl">X5 Group</div>
             <div className="font-bold tracking-tighter text-xl">Магнит</div>
             <div className="font-bold tracking-tighter text-xl">Мегафон</div>
-            <div className="font-bold tracking-tighter text-xl">Arena Data</div>
+            <div className="font-bold tracking-tighter text-xl">Arenadata</div>
           </div>
         </div>
       </section>
@@ -240,13 +240,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Честные рамки */}
+      {/* Блок: Принципы */}
       <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
         <div>
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Принципы</h2>
           <h3 className="text-3xl font-bold tracking-tight mb-6">Честные рамки</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Я продаю не диагностику. Я продаю восстановление управляемости. Диагностика — мой способ это сделать.
+            Я придерживаюсь позиции прозрачности в отношениях с заказчиком. <br/>
+            Работа строится на взаимном доверии и четком понимании границ ответственности.
           </p>
         </div>
 
