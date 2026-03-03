@@ -12,6 +12,8 @@ import Catalog from "./pages/Catalog";
 import ProductDetails from "./pages/ProductDetails";
 import Methodology from "./pages/Methodology";
 import Pricing from "./pages/Pricing";
+import Privacy from "./pages/Privacy";
+import Offer from "./pages/Offer";
 
 function Router() {
   return (
@@ -24,6 +26,8 @@ function Router() {
           <Route path="/product/:id" component={ProductDetails} />
           <Route path="/methodology" component={Methodology} />
           <Route path="/pricing" component={Pricing} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/offer" component={Offer} />
           <Route component={NotFound} />
         </Switch>
       </div>
