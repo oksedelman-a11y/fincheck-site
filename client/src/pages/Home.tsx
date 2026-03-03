@@ -15,7 +15,11 @@ import {
   Clock,
   User,
   MessageSquare,
-  FileText
+  FileText,
+  TrendingUp,
+  Map,
+  Eye,
+  EyeOff
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
@@ -201,7 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Journey (Existing Visual Schema) */}
+      {/* Client Journey */}
       <section className="border-t pt-16">
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center font-mono">Архитектура движения</h2>
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Клиентский путь</h3>
@@ -210,27 +214,27 @@ export default function Home() {
             <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
               <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 1: КАЛИБРОВКА</div>
               <h4 className="font-bold text-lg mb-2">A0: FinCheck</h4>
-              <p className="text-sm text-muted-foreground">Опциональный входной аудит. Поиск корневой проблемы.</p>
+              <p className="text-sm text-muted-foreground">Экспресс-ясность. Поиск корневой проблемы и разрыва as is → to be.</p>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 flex flex-col gap-2 relative">
               <div className="bg-primary text-primary-foreground p-6">
-                <div className="text-xs font-mono font-bold mb-2 opacity-80">ШАГ 2: ПРОЕКТИРОВАНИЕ</div>
-                <h4 className="font-bold text-lg mb-2">Уровни A и B</h4>
-                <p className="text-sm opacity-90">Внедрение целевых модулей: Ликвидность и Фин. Архитектура.</p>
+                <div className="text-xs font-mono font-bold mb-2 opacity-80">ШАГ 2: ВХОДНАЯ ЯСНОСТЬ</div>
+                <h4 className="font-bold text-lg mb-2">Уровень A</h4>
+                <p className="text-sm opacity-90">Точечное восстановление управляемости в конкретном контуре (ДЗ, Платежи).</p>
               </div>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
-              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 3: СБОРКА</div>
-              <h4 className="font-bold text-lg mb-2">Уровень C</h4>
-              <p className="text-sm text-muted-foreground">Связка модулей в единый интегрированный контур.</p>
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 3: СИСТЕМНОСТЬ</div>
+              <h4 className="font-bold text-lg mb-2">Уровень B</h4>
+              <p className="text-sm text-muted-foreground">Расширенная диагностика. Связка денег, решений и действий.</p>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 bg-secondary/10 border border-dashed border-primary/50 p-6">
-              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 4: ВНЕДРЕНИЕ</div>
-              <h4 className="font-bold text-lg mb-2">Уровень D</h4>
-              <p className="text-sm text-muted-foreground">Методологическое сопровождение (Adviser).</p>
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 4: СБОРКА / НАДЗОР</div>
+              <h4 className="font-bold text-lg mb-2">Уровни C и D</h4>
+              <p className="text-sm text-muted-foreground">Интеграция результатов и методологическое сопровождение изменений.</p>
             </div>
           </div>
         </div>
@@ -242,7 +246,7 @@ export default function Home() {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Принципы</h2>
           <h3 className="text-3xl font-bold tracking-tight mb-6">Честные рамки</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Я придерживаюсь позиции прозрачности в отношениях с заказчиком. Работа строится на взаимном доверии и четком понимании границ ответственности.
+            Я продаю не диагностику. Я продаю восстановление управляемости. Диагностика — мой способ это сделать.
           </p>
         </div>
 
@@ -271,7 +275,7 @@ export default function Home() {
       {/* Final CTA */}
       <section className="border-t pt-16 flex flex-col items-center text-center">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-balance">
-          Готовы вернуть управление на основе данных?
+          Готовы вернуть управляемость?
         </h2>
         <Link href="/catalog?level=A0">
           <Button size="lg" className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all">

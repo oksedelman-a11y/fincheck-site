@@ -1,7 +1,20 @@
 import { useRoute, Link } from "wouter";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, CheckCircle2, Circle, CheckSquare, Target, Lightbulb, ShieldAlert } from "lucide-react";
+import { 
+  ChevronLeft, 
+  CheckCircle2, 
+  Circle, 
+  CheckSquare, 
+  Target, 
+  Lightbulb, 
+  ShieldAlert, 
+  User, 
+  XCircle,
+  Eye,
+  Activity,
+  ArrowRight
+} from "lucide-react";
 
 export default function ProductDetails() {
   const [match, params] = useRoute("/product/:id");
@@ -34,7 +47,7 @@ export default function ProductDetails() {
             {product.code}
           </span>
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            {product.role}
+            {product.level === 'A0' ? 'Экспресс-ясность' : product.level === 'A' ? 'Входная ясность' : 'Расширенная ясность'}
           </span>
         </div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
@@ -51,11 +64,21 @@ export default function ProductDetails() {
           <section>
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <Target className="w-5 h-5 text-primary mr-3" />
-              Задача продукта
+              Задача
             </h3>
             <div className="bg-secondary/20 p-6 border border-border/50 text-lg font-medium leading-relaxed">
               {product.task}
             </div>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-bold mb-4 flex items-center">
+              <User className="w-5 h-5 text-primary mr-3" />
+              Роль
+            </h3>
+            <p className="text-lg text-muted-foreground pl-8">
+              {product.role}
+            </p>
           </section>
 
           <section>
@@ -129,21 +152,47 @@ export default function ProductDetails() {
 
         <div className="space-y-8">
           <div className="bg-secondary/30 p-6 border border-border">
-            <h4 className="font-bold mb-3 uppercase tracking-widest text-xs">Логика ценообразования</h4>
+            <h4 className="font-bold mb-3 uppercase tracking-widest text-xs">Цена</h4>
             <p className="text-sm leading-relaxed">{product.pricingLogic}</p>
           </div>
 
-          <div className="border p-6 border-l-4 border-l-destructive bg-destructive/5">
-            <h4 className="font-bold mb-3 uppercase tracking-widest text-xs text-destructive flex items-center gap-2">
+          <div className="border p-6 border-l-4 border-l-destructive bg-destructive/5 space-y-4">
+            <h4 className="font-bold uppercase tracking-widest text-xs text-destructive flex items-center gap-2 border-b border-destructive/10 pb-2">
               <ShieldAlert className="w-4 h-4"/> 
               Границы ответственности
             </h4>
-            <p className="text-sm leading-relaxed text-muted-foreground">{product.boundaries}</p>
+            
+            {(product.da || product.neda) ? (
+              <div className="space-y-4">
+                {product.da && (
+                  <ul className="space-y-2">
+                    {product.da.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm font-bold text-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span>ДА: {item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {product.neda && (
+                  <ul className="space-y-2">
+                    {product.neda.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <XCircle className="w-4 h-4 text-destructive shrink-0 mt-0.5" />
+                        <span>НЕ: {item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ) : (
+              <p className="text-sm leading-relaxed text-muted-foreground">{product.boundaries}</p>
+            )}
           </div>
           
           <div className="pt-6">
             <Button className="w-full rounded-none h-14 font-bold text-base shadow-sm" size="lg">
-              Оставить заявку на продукт
+              Понять, что происходит
             </Button>
           </div>
         </div>
