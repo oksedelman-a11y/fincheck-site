@@ -19,12 +19,22 @@ import {
   TrendingUp,
   Map,
   Eye,
-  EyeOff
+  EyeOff,
+  Phone,
+  Mail,
+  Send
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
 
 export default function Home() {
+  const scrollToContacts = () => {
+    const element = document.getElementById('contacts');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex flex-col gap-24 pb-16">
       
@@ -51,12 +61,15 @@ export default function Home() {
             Ясность через операционную и финансовую диагностику процессов.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-6">
-            <Link href="/catalog?level=A0">
-              <Button size="lg" className="rounded-none font-bold px-8 h-12 text-base" data-testid="button-understand">
-                Понять, что происходит
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="rounded-none font-bold px-8 h-12 text-base" 
+              data-testid="button-understand"
+              onClick={scrollToContacts}
+            >
+              Понять, что происходит
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
             <Link href="/catalog">
               <Button variant="outline" size="lg" className="rounded-none font-bold px-8 h-12 text-base" data-testid="button-catalog">
                 Каталог услуг
@@ -278,11 +291,46 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-balance">
           Готовы вернуть управляемость?
         </h2>
-        <Link href="/catalog?level=A0">
-          <Button size="lg" className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all">
-            Запросить диагностику
-          </Button>
-        </Link>
+        <Button 
+          size="lg" 
+          className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
+          onClick={scrollToContacts}
+        >
+          Запросить диагностику
+        </Button>
+      </section>
+
+      {/* Блок Контакты */}
+      <section id="contacts" className="border-t pt-16 grid md:grid-cols-3 gap-12 scroll-mt-20">
+        <div className="md:col-span-1">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Связь</h2>
+          <h3 className="text-3xl font-bold tracking-tight">Контакты</h3>
+        </div>
+        <div className="md:col-span-2 grid sm:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              < Phone className="w-5 h-5 text-primary" />
+              <a href="tel:+79652229652" className="text-lg font-medium hover:text-primary transition-colors">+7 (965) 222-965-2</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Mail className="w-5 h-5 text-primary" />
+              <a href="mailto:fin_check@list.ru" className="text-lg font-medium hover:text-primary transition-colors">fin_check@list.ru</a>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Send className="w-5 h-5 text-primary" />
+              <a 
+                href="https://t.me/fin_check" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4"
+              >
+                Дневник финансового диагноста
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
     </div>

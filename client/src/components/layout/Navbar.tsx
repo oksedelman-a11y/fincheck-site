@@ -34,11 +34,18 @@ export default function Navbar() {
           </nav>
         </div>
         <div className="flex items-center">
-          <Link href="/catalog?level=A0">
-            <a className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-              Запросить FinCheck
-            </a>
-          </Link>
+          <button 
+            onClick={() => {
+              if (window.location.pathname === '/') {
+                document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.href = '/#contacts';
+              }
+            }}
+            className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          >
+            Запросить FinCheck
+          </button>
         </div>
       </div>
     </header>
