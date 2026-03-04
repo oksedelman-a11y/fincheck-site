@@ -21,13 +21,13 @@ export default function Footer() {
           <Link href="/offer" className="hover:text-foreground transition-colors">Публичная оферта</Link>
           
           <Button
-            variant="ghost"
+            variant="default"
             size="icon"
             onClick={scrollToTop}
-            className="rounded-none hover:bg-secondary/50 transition-all group"
+            className="rounded-none w-14 h-14 bg-primary hover:bg-primary/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-primary/30 transition-all group shrink-0"
             title="Наверх"
           >
-            <ArrowUp className="h-5 w-5 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUp className="h-7 w-7 group-hover:-translate-y-1 transition-transform" />
           </Button>
         </div>
       </div>
