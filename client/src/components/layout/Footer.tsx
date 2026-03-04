@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 export default function Footer() {
   return (
     <footer className="w-full border-t py-12 md:py-16">
@@ -9,8 +11,8 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-muted-foreground">
-          <a href="#" className="hover:text-foreground transition-colors">Политика конфиденциальности</a>
-          <a href="#" className="hover:text-foreground transition-colors">Договор оферты</a>
+          <Link href="/privacy" className="hover:text-foreground transition-colors">Политика конфиденциальности</Link>
+          <Link href="/offer" className="hover:text-foreground transition-colors">Публичная оферта</Link>
         </div>
       </div>
     </footer>
