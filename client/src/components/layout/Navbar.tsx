@@ -1,12 +1,21 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logoImg from "@assets/LOGO_ChatGPT_Image_22_янв._2026_г.,_09_42_14_1772446002800.png";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) setIsOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
 
   const navLinks = [
     { href: "/", label: "Обзор" },
@@ -75,14 +84,14 @@ export default function Navbar() {
         "fixed inset-0 top-16 z-40 bg-background md:hidden transition-all duration-300 ease-in-out border-t",
         isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col p-6 gap-6 text-lg font-medium">
+        <nav className="flex flex-col p-6 gap-2 text-sm font-medium bg-background h-screen">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <a 
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "transition-colors hover:text-primary py-2 border-b border-border/40",
-                  location === link.href ? "text-primary" : "text-foreground/60"
+                  "transition-colors hover:text-primary py-3 px-2 border-b border-border/20 text-[#334155]",
+                  location === link.href ? "text-primary bg-secondary/20" : "text-[#475569]"
                 )}
               >
                 {link.label}
@@ -91,7 +100,7 @@ export default function Navbar() {
           ))}
           <button 
             onClick={() => handleNavClick("#contacts")}
-            className="mt-4 inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-base font-bold text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            className="mt-4 inline-flex h-11 items-center justify-center rounded-none bg-primary px-6 text-sm font-bold text-primary-foreground shadow transition-colors hover:bg-primary/90"
           >
             Запросить FinCheck
           </button>
