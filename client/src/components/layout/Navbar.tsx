@@ -1,9 +1,12 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import logoImg from "@assets/LOGO_ChatGPT_Image_22_янв._2026_г.,_09_42_14_1772446002800.png";
 
 export default function Navbar() {
   const [location] = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Обзор" },
@@ -11,6 +14,20 @@ export default function Navbar() {
     { href: "/methodology", label: "Методология" },
     { href: "/pricing", label: "Логика ценообразования" },
   ];
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    if (href === "#contacts") {
+      if (window.location.pathname === "/") {
+        const element = document.getElementById("contacts");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        window.location.href = "/#contacts";
+      }
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,20 +50,52 @@ export default function Navbar() {
             ))}
           </nav>
         </div>
-        <div className="flex items-center">
+        
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center">
+            <button 
+              onClick={() => handleNavClick("#contacts")}
+              className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            >
+              Запросить FinCheck
+            </button>
+          </div>
+
           <button 
-            onClick={() => {
-              if (window.location.pathname === '/') {
-                document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#contacts';
-              }
-            }}
-            className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            className="md:hidden p-2 text-foreground/60 hover:text-foreground transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      <div className={cn(
+        "fixed inset-0 top-16 z-40 bg-background md:hidden transition-all duration-300 ease-in-out border-t",
+        isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+      )}>
+        <nav className="flex flex-col p-6 gap-6 text-lg font-medium">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <a 
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "transition-colors hover:text-primary py-2 border-b border-border/40",
+                  location === link.href ? "text-primary" : "text-foreground/60"
+                )}
+              >
+                {link.label}
+              </a>
+            </Link>
+          ))}
+          <button 
+            onClick={() => handleNavClick("#contacts")}
+            className="mt-4 inline-flex h-12 items-center justify-center rounded-none bg-primary px-6 text-base font-bold text-primary-foreground shadow transition-colors hover:bg-primary/90"
           >
             Запросить FinCheck
           </button>
-        </div>
+        </nav>
       </div>
     </header>
   );
