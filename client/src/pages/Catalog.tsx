@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useSearch } from "wouter";
 import { products } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +12,12 @@ export default function Catalog() {
   
   const [activeFilter, setActiveFilter] = useState<string | null>(initialLevel || null);
 
+  useEffect(() => {
+    if (initialLevel) {
+      setActiveFilter(initialLevel);
+    }
+  }, [initialLevel]);
+
   const filteredProducts = activeFilter 
     ? products.filter(p => p.level === activeFilter)
     : products;
@@ -23,6 +29,56 @@ export default function Catalog() {
     { id: 'C', label: 'Уровень C: Сводная ясность' },
     { id: 'D', label: 'Уровень D: Сопровождение' }
   ];
+
+  const PricingLogic = () => (
+    <div className="mt-20 pt-16 border-t space-y-12">
+      <div className="max-w-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Логика ценообразования</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Прозрачная математическая модель формирования стоимости консалтинговых продуктов. Мы продаем не часы, а конкретные единицы результата.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        <section className="space-y-8 text-sm">
+          <div>
+            <h3 className="font-bold mb-4 text-base">Базовая формула</h3>
+            <div className="bg-primary text-primary-foreground p-6 font-mono">
+              Стоимость = (Базовая ставка продукта) × Коэффициент масштаба × Коэффициент сложности
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-3 border-b pb-2 uppercase tracking-wider text-xs text-muted-foreground">Коэффициент масштаба бизнеса</h4>
+            <ul className="space-y-2">
+              <li className="flex justify-between"><span>До 100 сотрудников</span> <span className="font-mono text-primary font-bold">k = 1.0</span></li>
+              <li className="flex justify-between"><span>100 - 500 сотрудников</span> <span className="font-mono text-primary font-bold">k = 1.5</span></li>
+              <li className="flex justify-between"><span>500 - 2000 сотрудников</span> <span className="font-mono text-primary font-bold">k = 2.2</span></li>
+              <li className="flex justify-between"><span>Свыше 2000 сотрудников</span> <span className="font-mono text-primary font-bold">k = 3.5</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="space-y-6 text-sm">
+          <h4 className="font-bold mb-3 border-b pb-2 uppercase tracking-wider text-xs text-muted-foreground">Множители сложности (суммируются)</h4>
+          <ul className="space-y-4">
+            <li className="flex justify-between items-start gap-4">
+              <span className="text-muted-foreground">Распределенная филиальная сеть (более 5 регионов)</span>
+              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+20%</span>
+            </li>
+            <li className="flex justify-between items-start gap-4">
+              <span className="text-muted-foreground">Холдинговая структура (несколько юрлиц с кросс-функциями)</span>
+              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+30%</span>
+            </li>
+            <li className="flex justify-between items-start gap-4">
+              <span className="text-muted-foreground">Высокая срочность (сокращение нормативного срока на 30%)</span>
+              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+50%</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  );
 
   return (
     <div className="flex flex-col gap-10">
@@ -106,6 +162,8 @@ export default function Catalog() {
           ))}
         </div>
       </div>
+      
+      <PricingLogic />
     </div>
   );
 }

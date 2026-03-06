@@ -21,7 +21,7 @@ export default function Navbar() {
     { href: "/", label: "Обзор" },
     { href: "/catalog", label: "Каталог услуг" },
     { href: "/methodology", label: "Методология" },
-    { href: "/pricing", label: "Логика ценообразования" },
+    { href: "/pricing", label: "Экспресс-диагностика" },
   ];
 
   const handleNavClick = (href: string) => {
