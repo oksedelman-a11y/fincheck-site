@@ -1,4 +1,14 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/public"
+  "outputDirectory": "dist/public",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "xn--e1afhk7au.xn--p1ai" }
+      ],
+      "destination": "https://fin-check.site/$1",
+      "permanent": true
+    }
+  ]
 }
