@@ -12,9 +12,9 @@ export default function Privacy() {
           <p><strong>Оператор персональных данных:</strong></p>
           <p>Эдельман Оксана Евгеньевна</p>
           <p><strong>Статус:</strong> физическое лицо, применяющее налог на профессиональный доход (самозанятость)</p>
-          <p><strong>Бренд:</strong> FinCheck</p>
+          <p><strong>Бренд:</strong> Финчек</p>
           <p><strong>Место регистрации:</strong> г. Москва, Российская Федерация</p>
-          <p><strong>Email:</strong> fin_check@list.ru</p>
+          <p><strong>Email:</strong> finance-check@mail.ru</p>
           <p><strong>Телефон:</strong> +7 (965) 222-965-2</p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function Privacy() {
           <li>потребовать их уточнения или удаления;</li>
           <li>отзывать согласие на обработку.</li>
         </ul>
-        <p>Запрос направляется на: <a href="mailto:fin_check@list.ru" className="text-primary hover:underline">fin_check@list.ru</a></p>
+        <p>Запрос направляется на: <a href="mailto:finance-check@mail.ru" className="text-primary hover:underline">finance-check@mail.ru</a></p>
       </section>
 
       <section className="mb-8">

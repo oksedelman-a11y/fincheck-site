@@ -2,7 +2,6 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logoImg from "@assets/LOGO_ChatGPT_Image_22_янв._2026_г.,_09_42_14_1772446002800.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -42,9 +41,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center space-x-3">
-            <img src={logoImg} alt="FinCheck Logo" className="h-8 w-auto" />
-            <span className="font-display font-bold text-xl tracking-tight text-[#002B5B]">FinCheck</span>
+          <Link href="/" className="flex flex-col items-start">
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Финчек Logo" className="h-8 w-auto" />
+              <span className="font-display font-bold text-xl tracking-tight text-[#002B5B]">Финчек</span>
+            </div>
+            <span className="text-[10px] italic text-muted-foreground -mt-0.5">Диагностика как услуга</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             {navLinks.map((link) => (
@@ -66,7 +68,7 @@ export default function Navbar() {
               onClick={() => handleNavClick("#contacts")}
               className="inline-flex h-9 items-center justify-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             >
-              Запросить FinCheck
+              Запросить Финчек
             </button>
           </div>
 
@@ -102,7 +104,7 @@ export default function Navbar() {
             onClick={() => handleNavClick("#contacts")}
             className="mt-4 inline-flex h-11 items-center justify-center rounded-none bg-primary px-6 text-sm font-bold text-primary-foreground shadow transition-colors hover:bg-primary/90"
           >
-            Запросить FinCheck
+            Запросить Финчек
           </button>
         </nav>
       </div>

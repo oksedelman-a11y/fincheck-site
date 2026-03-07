@@ -11,7 +11,7 @@ export default function Offer() {
         <div className="bg-secondary/30 p-6 border border-border/50 space-y-2 mb-4">
           <p><strong>Исполнитель:</strong> Эдельман Оксана Евгеньевна</p>
           <p><strong>Самозанятость (НПД), г. Москва</strong></p>
-          <p><strong>Бренд:</strong> FinCheck</p>
+          <p><strong>Бренд:</strong> Финчек</p>
         </div>
       </section>
 

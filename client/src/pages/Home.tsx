@@ -55,7 +55,7 @@ export default function Home() {
             Когда в бизнесе есть данные, люди и отчёты, <br/>но нет ясности.
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            FinCheck — управленческая диагностика, которая возвращает целостную картину бизнеса и управляемость.
+            Финчек — управленческая диагностика, которая возвращает целостную картину бизнеса и управляемость.
           </p>
           <p className="text-lg font-medium">
             Ясность через операционную и финансовую диагностику процессов.
@@ -226,7 +226,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-2">
             <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
               <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 1: КАЛИБРОВКА</div>
-              <h4 className="font-bold text-lg mb-2">A0: FinCheck</h4>
+              <h4 className="font-bold text-lg mb-2">A0: Финчек</h4>
               <p className="text-sm text-muted-foreground">Экспресс-ясность. Поиск корневой проблемы и разрыва as is → to be.</p>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
@@ -314,7 +314,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary" />
-              <a href="mailto:fin_check@list.ru" className="text-lg font-medium hover:text-primary transition-colors">fin_check@list.ru</a>
+              <a href="mailto:finance-check@mail.ru" className="text-lg font-medium hover:text-primary transition-colors">finance-check@mail.ru</a>
             </div>
           </div>
           <div className="space-y-4">

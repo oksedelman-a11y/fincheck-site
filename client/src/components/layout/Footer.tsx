@@ -11,8 +11,9 @@ export default function Footer() {
     <footer className="w-full border-t py-12 md:py-16 relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
-          <span className="font-display font-bold text-lg tracking-tight">FinCheck</span>
-          <p className="text-sm text-muted-foreground mt-2 max-w-sm">
+          <span className="font-display font-bold text-lg tracking-tight">Финчек</span>
+          <p className="text-xs italic text-muted-foreground mt-1 mb-3">Диагностика как услуга</p>
+          <p className="text-sm text-muted-foreground max-w-sm">
             Системная архитектура управленческой диагностики для владельцев и руководителей бизнеса.
           </p>
         </div>
