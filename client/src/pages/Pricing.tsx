@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react";
 import PayablesQuiz from "./PayablesQuiz";
+import PaymentCalendarQuiz from "./PaymentCalendarQuiz";
 
 type Question = {
   id: number;
@@ -203,6 +204,10 @@ export default function Pricing() {
 
       <div className="border-t pt-16">
         <PayablesQuiz />
+      </div>
+
+      <div className="border-t pt-16">
+        <PaymentCalendarQuiz />
       </div>
     </div>
   );
