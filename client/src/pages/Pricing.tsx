@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react";
 import PayablesQuiz from "./PayablesQuiz";
 import PaymentCalendarQuiz from "./PaymentCalendarQuiz";
+import ProfitabilityQuiz from "./ProfitabilityQuiz";
 
 type Question = {
   id: number;
@@ -208,6 +209,10 @@ export default function Pricing() {
 
       <div className="border-t pt-16">
         <PaymentCalendarQuiz />
+      </div>
+
+      <div className="border-t pt-16">
+        <ProfitabilityQuiz />
       </div>
     </div>
   );
