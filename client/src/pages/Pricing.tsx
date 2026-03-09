@@ -6,6 +6,7 @@ import PayablesQuiz from "./PayablesQuiz";
 import PaymentCalendarQuiz from "./PaymentCalendarQuiz";
 import ProfitabilityQuiz from "./ProfitabilityQuiz";
 import CashFlowQuiz from "./CashFlowQuiz";
+import ManagementRulesQuiz from "./ManagementRulesQuiz";
 
 type Question = {
   id: number;
@@ -218,6 +219,10 @@ export default function Pricing() {
 
       <div className="border-t pt-16">
         <CashFlowQuiz />
+      </div>
+
+      <div className="border-t pt-16">
+        <ManagementRulesQuiz />
       </div>
     </div>
   );
