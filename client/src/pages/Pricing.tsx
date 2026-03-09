@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react";
+import DiagnosticSelector from "./DiagnosticSelector";
 import PayablesQuiz from "./PayablesQuiz";
 import PaymentCalendarQuiz from "./PaymentCalendarQuiz";
 import ProfitabilityQuiz from "./ProfitabilityQuiz";
@@ -113,7 +114,9 @@ export default function Pricing() {
 
   return (
     <div className="flex flex-col gap-16 max-w-5xl pb-16">
-      <div>
+      <DiagnosticSelector />
+
+      <div id="diagnostic-ar">
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">Экспресс-диагностика</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -205,23 +208,23 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className="border-t pt-16">
+      <div id="diagnostic-ap" className="border-t pt-16">
         <PayablesQuiz />
       </div>
 
-      <div className="border-t pt-16">
+      <div id="diagnostic-payment-calendar" className="border-t pt-16">
         <PaymentCalendarQuiz />
       </div>
 
-      <div className="border-t pt-16">
+      <div id="diagnostic-pl" className="border-t pt-16">
         <ProfitabilityQuiz />
       </div>
 
-      <div className="border-t pt-16">
+      <div id="diagnostic-cashflow" className="border-t pt-16">
         <CashFlowQuiz />
       </div>
 
-      <div className="border-t pt-16">
+      <div id="diagnostic-regulations" className="border-t pt-16">
         <ManagementRulesQuiz />
       </div>
     </div>
