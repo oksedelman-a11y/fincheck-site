@@ -54,10 +54,66 @@ const questions: Question[] = [
   },
 ];
 
+interface DiagnosticBlockProps {
+  id: string;
+  isSelected: boolean;
+  onCheckOther: () => void;
+  children: React.ReactNode;
+}
+
+function DiagnosticBlock({ id, isSelected, onCheckOther, children }: DiagnosticBlockProps) {
+  return (
+    <div
+      className={cn(
+        "transition-all duration-300 overflow-hidden",
+        isSelected ? "opacity-100 visible" : "opacity-0 invisible h-0"
+      )}
+    >
+      <div className="space-y-6">
+        <div className="text-xs font-mono font-bold text-primary uppercase tracking-widest">
+          Быстрая проверка (30–60 секунд)
+        </div>
+        {children}
+        <div className="pt-4 border-t border-border/30">
+          <button
+            onClick={onCheckOther}
+            className="text-sm text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 underline-offset-4"
+          >
+            Проверить другой показатель →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Pricing() {
+  const [selectedDiagnostic, setSelectedDiagnostic] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
+
+  const handleSelectDiagnostic = (id: string) => {
+    setSelectedDiagnostic(id);
+    // Reset AR quiz state when switching
+    if (id !== "ar") {
+      setCurrentStep(0);
+      setAnswers([]);
+      setShowResult(false);
+    }
+    // Scroll to diagnostic
+    setTimeout(() => {
+      const element = document.getElementById("diagnostic-container");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
+  const handleCheckOther = () => {
+    setSelectedDiagnostic(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleAnswer = (score: number) => {
     const newAnswers = [...answers, score];
@@ -114,118 +170,125 @@ export default function Pricing() {
 
   return (
     <div className="flex flex-col gap-16 max-w-5xl pb-16">
-      <DiagnosticSelector />
+      <DiagnosticSelector selectedId={selectedDiagnostic} onSelect={handleSelectDiagnostic} />
 
-      <div id="diagnostic-ar">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">Экспресс-диагностика</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Экспресс-диагностика дебиторской задолженности
-          </p>
-          <p className="mt-4 text-lg">
-            Ответьте на несколько вопросов и получите быструю оценку риска вашей дебиторской задолженности.
-          </p>
-        </div>
-
-        <div className="max-w-2xl w-full mt-12">
-          {!showResult ? (
-            <div className="bg-card border p-8 space-y-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 h-1 bg-primary/10 w-full">
-                <div 
-                  className="h-full bg-primary transition-all duration-500" 
-                  style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-primary uppercase tracking-widest">
-                  Вопрос {currentStep + 1} из {questions.length}
-                </span>
-                <h2 className="text-xl md:text-2xl font-bold tracking-tight">
-                  {questions[currentStep].text}
-                </h2>
-              </div>
-
-              <div className="grid gap-3">
-                {questions[currentStep].options.map((option, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleAnswer(option.score)}
-                    className="w-full text-left p-4 border hover:border-primary hover:bg-primary/5 transition-all group flex justify-between items-center"
-                  >
-                    <span className="font-medium">{option.text}</span>
-                    <div className="w-5 h-5 border rounded-full group-hover:border-primary flex items-center justify-center">
-                      <div className="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100" />
-                    </div>
-                  </button>
-                ))}
-              </div>
+      <div id="diagnostic-container" className="space-y-12">
+        {/* AR - Дебиторская задолженность */}
+        <DiagnosticBlock id="ar" isSelected={selectedDiagnostic === "ar"} onCheckOther={handleCheckOther}>
+          <div>
+            <div className="max-w-3xl mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Экспресс-диагностика дебиторской задолженности</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Ответьте на несколько вопросов и получите быструю оценку риска вашей дебиторской задолженности.
+              </p>
             </div>
-          ) : (
-            <div className="space-y-6">
-              <div className={cn("border p-8 space-y-6", result.bgColor)}>
-                <div className="flex items-center gap-4">
-                  <result.icon className={cn("w-8 h-8", result.color)} />
-                  <h2 className={cn("text-3xl font-bold tracking-tight", result.color)}>
-                    {result.title}
-                  </h2>
-                </div>
-                <p className="text-lg leading-relaxed">
-                  {result.description}
-                </p>
-                
-                <div className="pt-6 border-t border-black/5 space-y-4">
-                  <p className="text-sm italic text-muted-foreground">
-                    Экспресс-диагностика носит ориентировочный характер. Для точной оценки требуется анализ структуры дебиторской задолженности и условий работы с клиентами.
-                  </p>
-                  <div className="bg-primary/5 p-4 border-l-4 border-primary">
-                    <p className="text-sm font-medium">
-                      Инсайт: Компании с дебиторской задолженностью более 60 дней обычно теряют 5–15% оборотного капитала.
-                    </p>
+
+            <div className="max-w-2xl w-full">
+              {!showResult ? (
+                <div className="bg-card border p-8 space-y-8 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 h-1 bg-primary/10 w-full">
+                    <div 
+                      className="h-full bg-primary transition-all duration-500" 
+                      style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <span className="text-xs font-mono font-bold text-primary uppercase tracking-widest">
+                      Вопрос {currentStep + 1} из {questions.length}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight">
+                      {questions[currentStep].text}
+                    </h3>
+                  </div>
+
+                  <div className="grid gap-3">
+                    {questions[currentStep].options.map((option, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleAnswer(option.score)}
+                        className="w-full text-left p-4 border hover:border-primary hover:bg-primary/5 transition-all group flex justify-between items-center"
+                      >
+                        <span className="font-medium">{option.text}</span>
+                        <div className="w-5 h-5 border rounded-full group-hover:border-primary flex items-center justify-center">
+                          <div className="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100" />
+                        </div>
+                      </button>
+                    ))}
                   </div>
                 </div>
+              ) : (
+                <div className="space-y-6">
+                  <div className={cn("border p-8 space-y-6", result.bgColor)}>
+                    <div className="flex items-center gap-4">
+                      <result.icon className={cn("w-8 h-8", result.color)} />
+                      <h3 className={cn("text-3xl font-bold tracking-tight", result.color)}>
+                        {result.title}
+                      </h3>
+                    </div>
+                    <p className="text-lg leading-relaxed">
+                      {result.description}
+                    </p>
+                    
+                    <div className="pt-6 border-t border-black/5 space-y-4">
+                      <p className="text-sm italic text-muted-foreground">
+                        Экспресс-диагностика носит ориентировочный характер. Для точной оценки требуется анализ структуры дебиторской задолженности и условий работы с клиентами.
+                      </p>
+                      <div className="bg-primary/5 p-4 border-l-4 border-primary">
+                        <p className="text-sm font-medium">
+                          Инсайт: Компании с дебиторской задолженностью более 60 дней обычно теряют 5–15% оборотного капитала.
+                        </p>
+                      </div>
+                    </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button 
-                    size="lg" 
-                    className="rounded-none font-bold"
-                    onClick={scrollToContacts}
-                  >
-                    Связаться для полной диагностики
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="rounded-none"
-                    onClick={resetQuiz}
-                  >
-                    Пройти еще раз
-                  </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <Button 
+                        size="lg" 
+                        className="rounded-none font-bold"
+                        onClick={scrollToContacts}
+                      >
+                        Связаться для полной диагностики
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="rounded-none"
+                        onClick={resetQuiz}
+                      >
+                        Пройти еще раз
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        </DiagnosticBlock>
 
-      <div id="diagnostic-ap" className="border-t pt-16">
-        <PayablesQuiz />
-      </div>
+        {/* AP - Кредиторская задолженность */}
+        <DiagnosticBlock id="ap" isSelected={selectedDiagnostic === "ap"} onCheckOther={handleCheckOther}>
+          <PayablesQuiz />
+        </DiagnosticBlock>
 
-      <div id="diagnostic-payment-calendar" className="border-t pt-16">
-        <PaymentCalendarQuiz />
-      </div>
+        {/* Payment Calendar - Платежный календарь */}
+        <DiagnosticBlock id="calendar" isSelected={selectedDiagnostic === "calendar"} onCheckOther={handleCheckOther}>
+          <PaymentCalendarQuiz />
+        </DiagnosticBlock>
 
-      <div id="diagnostic-pl" className="border-t pt-16">
-        <ProfitabilityQuiz />
-      </div>
+        {/* PL - Прибыльность */}
+        <DiagnosticBlock id="pl" isSelected={selectedDiagnostic === "pl"} onCheckOther={handleCheckOther}>
+          <ProfitabilityQuiz />
+        </DiagnosticBlock>
 
-      <div id="diagnostic-cashflow" className="border-t pt-16">
-        <CashFlowQuiz />
-      </div>
+        {/* Cash Flow - Денежный поток */}
+        <DiagnosticBlock id="cashflow" isSelected={selectedDiagnostic === "cashflow"} onCheckOther={handleCheckOther}>
+          <CashFlowQuiz />
+        </DiagnosticBlock>
 
-      <div id="diagnostic-regulations" className="border-t pt-16">
-        <ManagementRulesQuiz />
+        {/* Regulations - Финансовые регламенты */}
+        <DiagnosticBlock id="regulations" isSelected={selectedDiagnostic === "regulations"} onCheckOther={handleCheckOther}>
+          <ManagementRulesQuiz />
+        </DiagnosticBlock>
       </div>
     </div>
   );

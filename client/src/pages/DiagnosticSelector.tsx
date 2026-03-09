@@ -1,43 +1,25 @@
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 type DiagnosticItem = {
   id: string;
   label: string;
-  anchorId: string;
 };
 
 const diagnostics: DiagnosticItem[] = [
-  { id: "ar", label: "Дебиторка", anchorId: "diagnostic-ar" },
-  { id: "ap", label: "Кредиторка", anchorId: "diagnostic-ap" },
-  { id: "pl", label: "Прибыльность", anchorId: "diagnostic-pl" },
-  { id: "cashflow", label: "Денежный поток", anchorId: "diagnostic-cashflow" },
-  { id: "calendar", label: "Платежный календарь", anchorId: "diagnostic-payment-calendar" },
-  { id: "regulations", label: "Финансовые регламенты", anchorId: "diagnostic-regulations" },
+  { id: "ar", label: "Дебиторка" },
+  { id: "ap", label: "Кредиторка" },
+  { id: "pl", label: "Прибыльность" },
+  { id: "cashflow", label: "Денежный поток" },
+  { id: "calendar", label: "Платежный календарь" },
+  { id: "regulations", label: "Финансовые регламенты" },
 ];
 
-export default function DiagnosticSelector() {
-  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+interface DiagnosticSelectorProps {
+  selectedId: string | null;
+  onSelect: (id: string) => void;
+}
 
-  const handleCardClick = (anchorId: string, id: string) => {
-    const element = document.getElementById(anchorId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      
-      // Brief highlight effect
-      setHighlightedId(id);
-      setTimeout(() => setHighlightedId(null), 1500);
-      
-      // Add subtle background pulse
-      const originalBg = element.style.backgroundColor;
-      element.style.backgroundColor = "rgba(var(--primary), 0.1)";
-      element.style.transition = "background-color 1.5s ease-out";
-      setTimeout(() => {
-        element.style.backgroundColor = originalBg;
-      }, 50);
-    }
-  };
-
+export default function DiagnosticSelector({ selectedId, onSelect }: DiagnosticSelectorProps) {
   return (
     <div className="w-full mb-16">
       <div className="mb-8">
@@ -45,7 +27,7 @@ export default function DiagnosticSelector() {
           Что вы хотите проверить?
         </h2>
         <p className="text-muted-foreground">
-          Выберите интересующую вас диагностику и перейдите к подробному анализу
+          Выберите интересующую вас диагностику
         </p>
       </div>
 
@@ -53,12 +35,12 @@ export default function DiagnosticSelector() {
         {diagnostics.map((diagnostic) => (
           <button
             key={diagnostic.id}
-            onClick={() => handleCardClick(diagnostic.anchorId, diagnostic.id)}
+            onClick={() => onSelect(diagnostic.id)}
             className={cn(
               "p-6 border rounded-lg transition-all duration-300 text-left",
               "hover:border-primary hover:shadow-md hover:-translate-y-1",
               "bg-card hover:bg-primary/5",
-              highlightedId === diagnostic.id && "border-primary bg-primary/10"
+              selectedId === diagnostic.id && "border-primary bg-primary/10"
             )}
           >
             <div className="flex items-center gap-3">
