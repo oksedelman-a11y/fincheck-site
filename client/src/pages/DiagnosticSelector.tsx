@@ -6,10 +6,10 @@ type DiagnosticItem = {
 };
 
 const diagnostics: DiagnosticItem[] = [
-  { id: "ar", label: "Дебиторка" },
-  { id: "ap", label: "Кредиторка" },
-  { id: "pl", label: "Прибыльность" },
-  { id: "cashflow", label: "Денежный поток" },
+  { id: "ar", label: "Дебиторская задолженность" },
+  { id: "ap", label: "Кредиторская задолженность" },
+  { id: "pl", label: "Прибыльность (P&L)" },
+  { id: "cashflow", label: "Денежный поток (Cash Flow)" },
   { id: "calendar", label: "Платежный календарь" },
   { id: "regulations", label: "Финансовые регламенты" },
 ];

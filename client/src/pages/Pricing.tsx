@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react";
 import DiagnosticSelector from "./DiagnosticSelector";
+import DiagnosticProgress from "./DiagnosticProgress";
 import PayablesQuiz from "./PayablesQuiz";
 import PaymentCalendarQuiz from "./PaymentCalendarQuiz";
 import ProfitabilityQuiz from "./ProfitabilityQuiz";
@@ -92,6 +93,13 @@ export default function Pricing() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
+  const [checkedDiagnostics, setCheckedDiagnostics] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    if (selectedDiagnostic) {
+      setCheckedDiagnostics(prev => new Set([...prev, selectedDiagnostic]));
+    }
+  }, [selectedDiagnostic]);
 
   const handleSelectDiagnostic = (id: string) => {
     setSelectedDiagnostic(id);
@@ -290,6 +298,8 @@ export default function Pricing() {
           <ManagementRulesQuiz />
         </DiagnosticBlock>
       </div>
+
+      <DiagnosticProgress checkedCount={checkedDiagnostics.size} />
     </div>
   );
 }
