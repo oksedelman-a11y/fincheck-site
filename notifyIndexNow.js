@@ -1,48 +1,60 @@
-// notifyIndexNow.js
 import fs from "fs";
-import path from "path";
 import https from "https";
 
-const INDEXNOW_KEY = "b0b327f377da04c842c05dba2c82f973";
-const KEY_LOCATION = "https://финчек.рф/b0b327f377da04c842c05dba2c82f973.txt";
-const PUBLIC_DIR = "./dist/public"; // путь к твоей папке с готовым сайтом
+const host = "финчек.рф";
 
-function getAllHtmlFiles(dir) {
-  let results = [];
-  const list = fs.readdirSync(dir);
-  list.forEach(file => {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-    if (stat && stat.isDirectory()) {
-      results = results.concat(getAllHtmlFiles(filePath));
-    } else if (file.endsWith(".html")) {
-      results.push(filePath);
-    }
-  });
-  return results;
+const urls = [
+  "https://финчек.рф/"
+];
+
+const sentFile = "./sentUrls.json";
+
+// читаем уже отправленные URL
+let sentUrls = [];
+if (fs.existsSync(sentFile)) {
+  sentUrls = JSON.parse(fs.readFileSync(sentFile));
 }
 
-function notify(url) {
-  const apiUrl = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${INDEXNOW_KEY}&keyLocation=${KEY_LOCATION}`;
-  https.get(apiUrl, (res) => {
-    if (res.statusCode === 200 || res.statusCode === 202) {
-      console.log(`✅ ${url}`);
-    } else {
-      console.log(`⚠️ ${url} - ${res.statusCode}`);
-    }
-  }).on("error", (err) => {
-    console.log(`❌ ${url} - ${err.message}`);
-  });
+// фильтруем только новые
+const newUrls = urls.filter(url => !sentUrls.includes(url));
+
+if (newUrls.length === 0) {
+  console.log("Все URL уже отправлены в IndexNow");
+  process.exit();
 }
 
-(async () => {
-  const htmlFiles = getAllHtmlFiles(PUBLIC_DIR);
-  for (const file of htmlFiles) {
-    const relativePath = path.relative(PUBLIC_DIR, file).replace(/\\/g, "/");
-    const url =
-      relativePath === "index.html"
-        ? "https://финчек.рф/"
-        : `https://финчек.рф/${relativePath.replace(/index\.html$/, "")}`;
-    notify(url);
+const data = JSON.stringify({
+  host: host,
+  key: "fincheck-key",
+  urlList: newUrls
+});
+
+const options = {
+  hostname: "api.indexnow.org",
+  path: "/indexnow",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Content-Length": data.length
   }
-})();
+};
+
+const req = https.request(options, res => {
+  console.log("Status:", res.statusCode);
+
+  if (res.statusCode === 200 || res.statusCode === 202) {
+    console.log("URL успешно отправлены");
+
+    const updated = [...sentUrls, ...newUrls];
+    fs.writeFileSync(sentFile, JSON.stringify(updated, null, 2));
+  } else {
+    console.log("Ошибка отправки");
+  }
+});
+
+req.on("error", error => {
+  console.error("Ошибка:", error.message);
+});
+
+req.write(data);
+req.end();
