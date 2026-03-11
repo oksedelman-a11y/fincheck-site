@@ -23,21 +23,30 @@ function getAllHtmlFiles(dir) {
   return results;
 }
 
-// Функция отправки одного URL на IndexNow
-function notify(url) {
+// Функция отправки одного URL на IndexNow с повторными попытками
+function notify(url, attempts = 3) {
   return new Promise((resolve) => {
-    const apiUrl = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${INDEXNOW_KEY}&keyLocation=${KEY_LOCATION}`;
-    https.get(apiUrl, (res) => {
-      if (res.statusCode === 200 || res.statusCode === 202) {
-        console.log(`✅ ${url}`);
-      } else {
-        console.log(`⚠️ ${url} - ${res.statusCode}`);
-      }
-      resolve();
-    }).on("error", (err) => {
-      console.log(`❌ ${url} - ${err.message}`);
-      resolve();
-    });
+    const tryRequest = (n) => {
+      const apiUrl = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${INDEXNOW_KEY}&keyLocation=${KEY_LOCATION}`;
+      https.get(apiUrl, (res) => {
+        if (res.statusCode === 200 || res.statusCode === 202) {
+          console.log(`✅ ${url}`);
+          resolve();
+        } else {
+          console.log(`⚠️ ${url} - ${res.statusCode}`);
+          resolve();
+        }
+      }).on("error", (err) => {
+        if (n > 1) {
+          console.log(`⏳ ${url} - ошибка, повтор через 1с...`);
+          setTimeout(() => tryRequest(n - 1), 1000);
+        } else {
+          console.log(`❌ ${url} - ${err.message}`);
+          resolve();
+        }
+      });
+    };
+    tryRequest(attempts);
   });
 }
 
