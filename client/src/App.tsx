@@ -14,6 +14,7 @@ import Methodology from "./pages/Methodology";
 import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import Offer from "./pages/Offer";
+import FinansovyyAnalitik from "./pages/FinansovyyAnalitik";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
           <Route path="/pricing" component={Pricing} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/offer" component={Offer} />
+          <Route path="/finansovyy-analitik-dlya-biznesa" component={FinansovyyAnalitik} />
           <Route component={NotFound} />
         </Switch>
       </div>
