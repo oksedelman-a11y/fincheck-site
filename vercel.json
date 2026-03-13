@@ -1,6 +1,15 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
+  "rewrites": [
+    { "source": "/finansovyy-analitik-dlya-biznesa", "destination": "/index.html" },
+    { "source": "/catalog", "destination": "/index.html" },
+    { "source": "/product/:id", "destination": "/index.html" },
+    { "source": "/methodology", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/offer", "destination": "/index.html" }
+  ],
   "routes": [
     {
       "src": "https://xn--e1afhk7au.xn--p1ai/(.*)",
