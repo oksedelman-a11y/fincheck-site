@@ -314,7 +314,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary" />
-              <a href="mailto:finance-check@mail.ru" className="text-lg font-medium hover:text-primary transition-colors">finance-check@mail.ru</a>
+              <a href="mailto:a@fin-fd.ru" className="text-lg font-medium hover:text-primary transition-colors">a@fin-fd.ru</a>
             </div>
           </div>
           <div className="space-y-4">
