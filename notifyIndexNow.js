@@ -1,32 +1,21 @@
-import fs from "fs";
 import https from "https";
 
 const host = "финчек.рф";
 
-const urls = [
+const key = "b0b327f377da04c842c05dba2c82f973";
+
+const keyLocation =
+  "https://финчек.рф/b0b327f377da04c842c05dba2c82f973.txt";
+
+const urlList = [
   "https://финчек.рф/"
 ];
 
-const sentFile = "./sentUrls.json";
-
-// читаем уже отправленные URL
-let sentUrls = [];
-if (fs.existsSync(sentFile)) {
-  sentUrls = JSON.parse(fs.readFileSync(sentFile));
-}
-
-// фильтруем только новые
-const newUrls = urls.filter(url => !sentUrls.includes(url));
-
-if (newUrls.length === 0) {
-  console.log("Все URL уже отправлены в IndexNow");
-  process.exit();
-}
-
 const data = JSON.stringify({
   host: host,
-  key: "fincheck-key",
-  urlList: newUrls
+  key: key,
+  keyLocation: keyLocation,
+  urlList: urlList
 });
 
 const options = {
@@ -34,26 +23,21 @@ const options = {
   path: "/indexnow",
   method: "POST",
   headers: {
-    "Content-Type": "application/json",
-    "Content-Length": data.length
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": Buffer.byteLength(data)
   }
 };
 
-const req = https.request(options, res => {
+const req = https.request(options, (res) => {
   console.log("Status:", res.statusCode);
 
-  if (res.statusCode === 200 || res.statusCode === 202) {
-    console.log("URL успешно отправлены");
-
-    const updated = [...sentUrls, ...newUrls];
-    fs.writeFileSync(sentFile, JSON.stringify(updated, null, 2));
-  } else {
-    console.log("Ошибка отправки");
-  }
+  res.on("data", (d) => {
+    process.stdout.write(d);
+  });
 });
 
-req.on("error", error => {
-  console.error("Ошибка:", error.message);
+req.on("error", (error) => {
+  console.error("Error:", error);
 });
 
 req.write(data);
