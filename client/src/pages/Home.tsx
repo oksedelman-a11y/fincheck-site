@@ -117,34 +117,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Что такое управленческая диагностика */}
-      <section className="border-t pt-16">
-        <div className="space-y-8 max-w-3xl">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Определение</h2>
-            <h3 className="text-3xl font-bold tracking-tight mb-6">Это:</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>временное погружение</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>анализ ограниченного контура</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>работа с причинами</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>восстановление логики</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Блок: Обо мне */}
       <section className="border-t pt-16 grid md:grid-cols-3 gap-12">
         <div className="md:col-span-1">
@@ -190,7 +162,7 @@ export default function Home() {
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
             <FileText className="w-6 h-6 opacity-80" />
             <h4 className="font-bold">Выводы</h4>
-            <p className="text-sm opacity-80">Представление отчета с картой рисков и рекомендациями.</p>
+            <p className="text-sm opacity-80">Карта проблем бизнеса и конкретные рекомендации.</p>
           </div>
         </div>
       </section>
@@ -263,32 +235,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Границы */}
+      {/* Блок: Что это за работа */}
       <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
-          <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Что это за работа</h2>
+            <h3 className="text-3xl font-bold tracking-tight mb-6">Это:</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>временное погружение</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>анализ ограниченного контура</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>работа с причинами</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>восстановление логики</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        
-        <div className="space-y-6">
-          <ul className="space-y-4">
-            <li className="flex gap-3 items-center text-lg opacity-80">
-              <XCircle className="w-5 h-5 text-destructive shrink-0" />
-              <span>внедрение</span>
-            </li>
-            <li className="flex gap-3 items-center text-lg opacity-80">
-              <XCircle className="w-5 h-5 text-destructive shrink-0" />
-              <span>аутсорсинг управления</span>
-            </li>
-            <li className="flex gap-3 items-center text-lg opacity-80">
-              <XCircle className="w-5 h-5 text-destructive shrink-0" />
-              <span>управление вместо собственника</span>
-            </li>
-            <li className="flex gap-3 items-center text-lg opacity-80">
-              <XCircle className="w-5 h-5 text-destructive shrink-0" />
-              <span>обещание финансового результата</span>
-            </li>
-          </ul>
+
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
+            <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>внедрение</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>аутсорсинг управления</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>управление вместо собственника</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>обещание финансового результата</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
