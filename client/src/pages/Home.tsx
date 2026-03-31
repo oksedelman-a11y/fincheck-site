@@ -294,11 +294,11 @@ export default function Home() {
           Готовы вернуть управляемость?
         </h2>
         <Button 
+          asChild
           size="lg" 
           className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
-          onClick={scrollToContacts}
         >
-          Запросить диагностику
+          <a href="mailto:a@fin-fd.ru">Запросить диагностику</a>
         </Button>
       </section>
 
@@ -329,6 +329,17 @@ export default function Home() {
                 className="text-lg font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4"
               >
                 Дневник финансового диагноста
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageSquare className="w-5 h-5 text-primary" />
+              <a 
+                href="https://max.ru/u/f9LHodD0cOILP3L2e51AWq_VVhq7lauGrcHfudXs4kERyADG269KsyOCU0E" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4"
+              >
+                Отправить запрос в Max
               </a>
             </div>
           </div>
