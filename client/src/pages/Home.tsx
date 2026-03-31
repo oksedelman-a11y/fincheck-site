@@ -52,29 +52,35 @@ export default function Home() {
         />
         <div className="max-w-3xl flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
-            Когда в бизнесе есть данные, люди и отчёты, <br/>но нет ясности.
+            В бизнесе есть прибыль — но нет денег? <br/>Отчёты есть — но им нельзя доверять?
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Финчек — управленческая диагностика, которая возвращает целостную картину бизнеса и управляемость.
+            Финчек — управленческая диагностика,<br/>которая показывает, что на самом деле происходит с бизнесом.
           </p>
           <p className="text-lg font-medium">
             Ясность через операционную и финансовую диагностику процессов.
           </p>
-          <div className="flex flex-wrap items-center gap-4 mt-6">
-            <Button 
-              size="lg" 
-              className="rounded-none font-bold px-8 h-12 text-base" 
-              data-testid="button-understand"
-              onClick={scrollToContacts}
-            >
-              Понять, что происходит
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Link href="/catalog">
-              <Button variant="outline" size="lg" className="rounded-none font-bold px-8 h-12 text-base" data-testid="button-catalog">
-                Каталог услуг
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-wrap items-center gap-4">
+              <Button 
+                size="lg" 
+                className="rounded-none font-bold px-8 h-12 text-base" 
+                data-testid="button-understand"
+                onClick={scrollToContacts}
+              >
+                Разобрать ситуацию
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+              <Link href="/catalog">
+                <Button variant="outline" size="lg" className="rounded-none font-bold px-8 h-12 text-base" data-testid="button-catalog">
+                  Каталог услуг
+                </Button>
+              </Link>
+            </div>
+            <p className="text-sm text-muted-foreground max-w-lg mt-2">
+              Вы не обязаны сразу заказывать большую работу.<br/>
+              Можно начать с экспресс-диагностики и остановиться на этом.
+            </p>
           </div>
         </div>
       </section>
@@ -93,31 +99,27 @@ export default function Home() {
           <ul className="space-y-6">
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">отчёты есть, но нет уверенности</span>
+              <span className="text-lg font-medium leading-tight">прибыль есть → денег нет</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">цифры противоречат друг другу</span>
+              <span className="text-lg font-medium leading-tight">отчёты противоречат друг другу</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">решения принимаются интуитивно</span>
+              <span className="text-lg font-medium leading-tight">дебиторка растёт быстрее выручки</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">цена ошибки растёт</span>
-            </li>
-            <li className="flex gap-4 items-start">
-              <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">рост есть, но система не выдерживает</span>
+              <span className="text-lg font-medium leading-tight">решения принимаются "на ощущениях"</span>
             </li>
           </ul>
         </div>
       </section>
 
       {/* Блок: Что такое управленческая диагностика */}
-      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
-        <div className="space-y-8">
+      <section className="border-t pt-16">
+        <div className="space-y-8 max-w-3xl">
           <div>
             <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Определение</h2>
             <h3 className="text-3xl font-bold tracking-tight mb-6">Это:</h3>
@@ -137,31 +139,6 @@ export default function Home() {
               <li className="flex gap-3 items-center text-lg">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                 <span>восстановление логики</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
-            <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>внедрение</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>аутсорсинг управления</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>управление вместо собственника</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>обещание финансового результата</span>
               </li>
             </ul>
           </div>
@@ -281,6 +258,35 @@ export default function Home() {
             <li className="flex gap-3 items-start">
               <ShieldAlert className="w-6 h-6 text-destructive shrink-0 mt-0.5" />
               <span>решения остаются за собственником</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Блок: Границы */}
+      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
+          <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
+        </div>
+        
+        <div className="space-y-6">
+          <ul className="space-y-4">
+            <li className="flex gap-3 items-center text-lg opacity-80">
+              <XCircle className="w-5 h-5 text-destructive shrink-0" />
+              <span>внедрение</span>
+            </li>
+            <li className="flex gap-3 items-center text-lg opacity-80">
+              <XCircle className="w-5 h-5 text-destructive shrink-0" />
+              <span>аутсорсинг управления</span>
+            </li>
+            <li className="flex gap-3 items-center text-lg opacity-80">
+              <XCircle className="w-5 h-5 text-destructive shrink-0" />
+              <span>управление вместо собственника</span>
+            </li>
+            <li className="flex gap-3 items-center text-lg opacity-80">
+              <XCircle className="w-5 h-5 text-destructive shrink-0" />
+              <span>обещание финансового результата</span>
             </li>
           </ul>
         </div>
