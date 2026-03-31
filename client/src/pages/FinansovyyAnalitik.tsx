@@ -1,6 +1,14 @@
+import { Helmet } from "react-helmet-async";
+import { Button } from "@/components/ui/button";
+
 export default function FinansovyyAnalitik() {
   return (
     <main className="max-w-3xl mx-auto mt-20 px-4 sm:px-6 lg:px-8 prose prose-lg dark:prose-invert">
+      <Helmet>
+        <title>Финансовый аналитик для бизнеса — диагностика и анализ | FinCheck</title>
+        <meta name="description" content="Внешний финансовый аналитик для бизнеса. Анализ прибыли, денежных потоков и управляемости финансов." />
+        <link rel="canonical" href="https://финчек.рф/finansovyy-analitik-dlya-biznesa" />
+      </Helmet>
       
       <h1>Финансовый аналитик для бизнеса</h1>
 
@@ -59,6 +67,10 @@ export default function FinansovyyAnalitik() {
 
       <p><strong>Что получает собственник после диагностики?</strong></p>
       <p>Понимание финансовой картины и рекомендации по улучшению управления.</p>
+
+      <Button asChild className="mt-8 mb-12">
+        <a href="https://финчек.рф">Получить экспресс-диагностику бизнеса →</a>
+      </Button>
 
     </main>
   );
