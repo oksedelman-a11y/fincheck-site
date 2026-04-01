@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { 
   ArrowRight, 
+  ArrowDown,
   Activity, 
   GitCommit, 
   Search, 
@@ -40,6 +41,17 @@ export default function Home() {
       
       {/* HERO */}
       <section className="relative flex flex-col items-start gap-6 pt-12 md:pt-24 min-h-[500px] justify-center border-b pb-16">
+        <div className="absolute right-4 md:right-8 bottom-8 z-10 hidden md:flex">
+          <Button
+            variant="default"
+            size="icon"
+            onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })}
+            className="rounded-none w-14 h-14 bg-primary hover:bg-primary/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-primary/30 transition-all group shrink-0"
+            title="Вниз"
+          >
+            <ArrowDown className="h-7 w-7 group-hover:translate-y-1 transition-transform" />
+          </Button>
+        </div>
         <div 
           className="absolute inset-0 -z-10 opacity-20 pointer-events-none"
           style={{ 
@@ -328,7 +340,18 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="text-lg font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4"
               >
-                Дневник финансового диагноста
+                Дневник финансового диагноста (ТГ)
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Send className="w-5 h-5 text-primary" />
+              <a 
+                href="https://max.ru/join/3GneEYjgmtioFAOiSiV9cM32QbmR-1zkQ6k78EPRbdI" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4"
+              >
+                Дневник финансового диагноста (Max)
               </a>
             </div>
             <div className="flex items-center gap-3">
