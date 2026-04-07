@@ -9,12 +9,5 @@
     { "source": "/pricing", "destination": "/index.html" },
     { "source": "/privacy", "destination": "/index.html" },
     { "source": "/offer", "destination": "/index.html" }
-  ],
-  "routes": [
-    {
-      "src": "https://xn--e1afhk7au.xn--p1ai/(.*)",
-      "status": 301,
-      "headers": { "Location": "https://fin-check.site/$1" }
-    }
   ]
 }
