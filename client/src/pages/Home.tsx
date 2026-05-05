@@ -64,7 +64,7 @@ export default function Home() {
         />
         <div className="max-w-3xl flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
-            В бизнесе есть прибыль — но нет денег? <br/>Отчёты есть — но им нельзя доверять?
+            Отчёты есть — но им нельзя доверять?
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Финчек — управленческая диагностика,<br/>которая показывает, что на самом деле происходит с бизнесом.
@@ -310,7 +310,7 @@ export default function Home() {
           size="lg" 
           className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
         >
-          <a href="mailto:a@fin-fd.ru">Запросить диагностику</a>
+          <a href="mailto:finance-check@mail.ru">Запросить диагностику</a>
         </Button>
       </section>
 
@@ -328,7 +328,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary" />
-              <a href="mailto:a@fin-fd.ru" className="text-lg font-medium hover:text-primary transition-colors">a@fin-fd.ru</a>
+              <a href="mailto:finance-check@mail.ru" className="text-lg font-medium hover:text-primary transition-colors">finance-check@mail.ru</a>
             </div>
           </div>
           <div className="space-y-4">
