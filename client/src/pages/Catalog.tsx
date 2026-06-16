@@ -19,8 +19,8 @@ export default function Catalog() {
   }, [initialLevel]);
 
   const filteredProducts = activeFilter 
-    ? products.filter(p => p.level === activeFilter)
-    : products;
+    ? products.filter(p => p.level === activeFilter && !p.isHidden)
+    : products.filter(p => !p.isHidden);
 
   const levels = [
     { id: 'A0', label: 'A0: Экспресс-ясность', icon: Eye },
