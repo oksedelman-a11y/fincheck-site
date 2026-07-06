@@ -15,6 +15,7 @@ export interface DiagnosticProduct {
   boundaries: string;
   da?: string[];
   neda?: string[];
+  isHidden?: boolean;
 }
 
 export const products: DiagnosticProduct[] = [

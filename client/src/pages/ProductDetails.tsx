@@ -139,8 +139,8 @@ export default function ProductDetails() {
               </div>
               <ul className="space-y-4">
                 {product.output.map((item, i) => (
-                  <li key={i} className="flex items-start text-sm md:text-base font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary-foreground mr-3 mt-0.5 shrink-0 opacity-90" />
+                  <li key={i} className={`flex items-start text-sm md:text-base font-medium ${item.startsWith('- ') ? 'ml-6' : ''}`}>
+                    {!item.startsWith('- ') && <CheckCircle2 className="w-5 h-5 text-primary-foreground mr-3 mt-0.5 shrink-0 opacity-90" />}
                     <span>{item}</span>
                   </li>
                 ))}
