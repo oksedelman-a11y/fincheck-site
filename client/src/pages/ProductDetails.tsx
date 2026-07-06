@@ -42,14 +42,11 @@ export default function ProductDetails() {
             Назад в каталог
           </a>
         </Link>
-        <div className="flex items-center gap-3 mb-4">
-          <span className="bg-primary text-primary-foreground text-sm px-2 py-1 font-mono font-bold">
-            {product.code}
-          </span>
-          <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            {product.level === 'A0' ? 'Экспресс-ясность' : product.level === 'A' ? 'Входная ясность' : 'Расширенная ясность'}
-          </span>
-        </div>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="bg-primary text-primary-foreground text-sm px-2 py-1 font-mono font-bold">
+              {product.code}
+            </span>
+          </div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
           {product.title}
         </h1>
@@ -66,7 +63,7 @@ export default function ProductDetails() {
               <Target className="w-5 h-5 text-primary mr-3" />
               Задача
             </h3>
-            <div className="bg-secondary/20 p-6 border border-border/50 text-lg font-medium leading-relaxed">
+            <div className="bg-secondary/20 p-6 border border-border/50 text-lg font-medium leading-relaxed whitespace-pre-wrap">
               {product.task}
             </div>
           </section>
@@ -153,7 +150,7 @@ export default function ProductDetails() {
         <div className="space-y-8">
           <div className="bg-secondary/30 p-6 border border-border">
             <h4 className="font-bold mb-3 uppercase tracking-widest text-xs">Цена</h4>
-            <p className="text-sm leading-relaxed">{product.pricingLogic}</p>
+            <p className="text-sm leading-relaxed whitespace-pre-wrap">{product.pricingLogic}</p>
           </div>
 
           <div className="border p-6 border-l-4 border-l-destructive bg-destructive/5 space-y-4">
@@ -192,7 +189,7 @@ export default function ProductDetails() {
           
           <div className="pt-6">
             <Button className="w-full rounded-none h-14 font-bold text-base shadow-sm" size="lg">
-              Понять, что происходит
+              {product.id === 'a1' ? 'Восстановить реальную картину процесса' : 'Понять, что происходит'}
             </Button>
           </div>
         </div>

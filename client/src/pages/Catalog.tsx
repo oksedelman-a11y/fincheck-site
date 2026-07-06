@@ -83,36 +83,7 @@ export default function Catalog() {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">Каталог решений</h1>
-        <p className="text-muted-foreground max-w-2xl">
-          Я продаю не диагностику. Я продаю восстановление управляемости. Диагностика — мой способ это сделать.
-        </p>
-      </div>
-
-      <div className="flex items-center gap-4 pb-4 border-b overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <Filter className="w-4 h-4 text-muted-foreground shrink-0" />
-        <div className="flex gap-2">
-          <Button 
-            variant={activeFilter === null ? "default" : "outline"}
-            size="sm"
-            className="rounded-none h-8 shrink-0"
-            onClick={() => setActiveFilter(null)}
-          >
-            Все
-          </Button>
-          {levels.map(level => (
-            <Button
-              key={level.id}
-              variant={activeFilter === level.id ? "default" : "outline"}
-              size="sm"
-              className="rounded-none h-8 shrink-0"
-              onClick={() => setActiveFilter(level.id)}
-            >
-              {level.icon && <level.icon className="w-3 h-3 mr-2" />}
-              {level.label}
-            </Button>
-          ))}
-        </div>
+        <h1 className="text-3xl font-bold tracking-tight mb-4">Каталог решений</h1>
       </div>
 
       <div className="space-y-12">
