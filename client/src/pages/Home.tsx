@@ -165,32 +165,60 @@ export default function Home() {
       <section className="border-t pt-16">
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center font-mono">Процесс</h2>
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как проходит работа</h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border p-6 space-y-4">
-            <MessageSquare className="w-6 h-6 text-primary" />
-            <h4 className="font-bold">Контакт</h4>
-            <p className="text-sm text-muted-foreground">Первичное обсуждение симптомов и задач собственника.</p>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Финчек-старт</div>
+            <h4 className="font-bold">Экспресс-диагностика процесса</h4>
+            <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+              <li>определяем проблему;</li>
+              <li>оцениваем масштаб;</li>
+              <li>понимаем, есть ли смысл в полной реконструкции.</li>
+            </ul>
+            <div className="pt-4 mt-4 border-t border-border">
+              <p className="text-sm font-medium">Результат:</p>
+              <p className="text-sm text-muted-foreground">Краткое заключение и рекомендация по дальнейшим действиям.</p>
+            </div>
           </div>
+          
           <div className="border p-6 space-y-4">
-            <Target className="w-6 h-6 text-primary" />
-            <h4 className="font-bold">Формулировка контура</h4>
-            <p className="text-sm text-muted-foreground">Определение границ исследования и состава данных.</p>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Финчек</div>
+            <h4 className="font-bold">Полная реконструкция процесса</h4>
+            <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+              <li>сбор источников данных;</li>
+              <li>построение модели данных;</li>
+              <li>интервью с участниками;</li>
+              <li>выявление противоречий.</li>
+            </ul>
           </div>
-          <div className="border p-6 space-y-4">
-            <Activity className="w-6 h-6 text-primary" />
-            <h4 className="font-bold">Диагностика</h4>
-            <p className="text-sm text-muted-foreground">Глубинная работа с данными, интервью и процессами.</p>
-          </div>
+          
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
-            <FileText className="w-6 h-6 opacity-80" />
-            <h4 className="font-bold">Выводы</h4>
-            <p className="text-sm opacity-80">Карта искажений процесса и конкретные рекомендации.</p>
+            <div className="text-xs font-mono font-bold mb-2 opacity-80">3. Что получает клиент</div>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-sm">Уровень А</h4>
+                <p className="text-sm opacity-90 font-medium">Модель данных (excel).</p>
+                <p className="text-sm opacity-80">Единая согласованная модель процесса.</p>
+              </div>
+              
+              <div>
+                <h4 className="font-bold text-sm">Уровень B</h4>
+                <p className="text-sm opacity-90 font-medium">Аналитическая карта управленческой реальности (pdf).</p>
+                <p className="text-sm opacity-80">Связи данных, процессов, ответственности и выявленных противоречий.</p>
+              </div>
+              
+              <div>
+                <h4 className="font-bold text-sm">Уровень C</h4>
+                <p className="text-sm opacity-90 font-medium">Карта управленческих изменений (pdf).</p>
+                <p className="text-sm opacity-80">Зависимости между выявленными проблемами, необходимыми действиями и ожидаемыми результатами.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Client Journey */}
-      <section className="border-t pt-16">
+      {/* Client Journey - Hidden by request */}
+      <section className="hidden border-t pt-16">
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center font-mono">Архитектура движения</h2>
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Клиентский путь</h3>
         <div className="max-w-5xl mx-auto">
