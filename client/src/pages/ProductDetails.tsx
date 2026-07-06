@@ -43,8 +43,8 @@ export default function ProductDetails() {
           </a>
         </Link>
           <div className="flex items-center gap-3 mb-4">
-            <span className="bg-primary text-primary-foreground text-sm px-2 py-1 font-mono font-bold">
-              {product.code}
+            <span className="bg-black text-white text-sm px-2 py-1 font-mono font-bold">
+              {product.code === 'A0' ? '1' : product.code === 'A1' ? '2' : product.code}
             </span>
           </div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
@@ -102,8 +102,8 @@ export default function ProductDetails() {
             </h3>
             <ul className="space-y-3 pl-2">
               {product.input.map((item, i) => (
-                <li key={i} className="flex items-start text-sm md:text-base">
-                  <Circle className="w-4 h-4 text-muted-foreground mr-3 mt-1.5 shrink-0" />
+                <li key={i} className={`flex items-start text-sm md:text-base ${i === 0 && product.id === 'a1' ? 'font-medium pb-1' : ''}`}>
+                  {!(i === 0 && product.id === 'a1') && <Circle className="w-4 h-4 text-muted-foreground mr-3 mt-1.5 shrink-0" />}
                   <span>{item}</span>
                 </li>
               ))}
@@ -115,11 +115,11 @@ export default function ProductDetails() {
               <span className="bg-muted text-muted-foreground w-6 h-6 inline-flex items-center justify-center rounded-full text-xs mr-3 font-mono">2</span>
               Процесс (Process)
             </h3>
-            <ul className="space-y-3 pl-2">
+            <ul className="space-y-4 pl-2">
               {product.process.map((item, i) => (
                 <li key={i} className="flex items-start text-sm md:text-base">
                   <CheckSquare className="w-4 h-4 text-primary mr-3 mt-1.5 shrink-0" />
-                  <span>{item}</span>
+                  <span className="whitespace-pre-wrap">{item}</span>
                 </li>
               ))}
             </ul>

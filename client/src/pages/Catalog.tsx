@@ -111,8 +111,8 @@ export default function Catalog() {
               <a className={`group flex flex-col justify-between border bg-card p-6 transition-all hover:border-primary hover:shadow-sm ${product.level === 'A0' ? 'border-primary border-l-4 shadow-sm' : ''}`}>
                 <div>
                   <div className="flex justify-between items-start mb-4">
-                    <Badge variant={product.level === 'A0' ? 'default' : 'secondary'} className="rounded-none font-mono font-bold px-2 py-1">
-                      {product.code}
+                    <Badge variant={product.code === 'A0' || product.code === 'A1' ? 'default' : 'secondary'} className="rounded-none font-mono font-bold px-2 py-1 bg-black text-white hover:bg-black/90">
+                      {product.code === 'A0' ? '1' : product.code === 'A1' ? '2' : product.code}
                     </Badge>
                     <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
                   </div>
