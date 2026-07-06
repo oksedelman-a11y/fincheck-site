@@ -67,10 +67,10 @@ export default function Home() {
             Отчёты есть — но им нельзя доверять?
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Финчек — управленческая диагностика,<br/>которая показывает, что на самом деле происходит с бизнесом.
+            Финчек — управленческая диагностика,<br/>восстановление достоверной модели бизнес-процесса.
           </p>
-          <p className="text-lg font-medium">
-            Ясность через операционную и финансовую диагностику процессов.
+          <p className="text-lg font-medium max-w-3xl">
+            Ясность через операционную и финансовую диагностику данных и процессов. Авторская методология управленческого анализа, объединяющая чистоту данных и восстановление текущего состояния процесса, чтобы понять, что происходит на самом деле и каким данным можно доверять.
           </p>
           <div className="flex flex-col gap-4 mt-6">
             <div className="flex flex-wrap items-center gap-4">
@@ -111,19 +111,27 @@ export default function Home() {
           <ul className="space-y-6">
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">прибыль есть → денег нет</span>
+              <span className="text-lg font-medium leading-tight">Разные цифры в разных отчетах.</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">отчёты противоречат друг другу</span>
+              <span className="text-lg font-medium leading-tight">Не можем сверить дебиторку.</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">дебиторка растёт быстрее выручки</span>
+              <span className="text-lg font-medium leading-tight">Не понимаем, сколько товара.</span>
             </li>
             <li className="flex gap-4 items-start">
               <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span className="text-lg font-medium leading-tight">решения принимаются "на ощущениях"</span>
+              <span className="text-lg font-medium leading-tight">Бюджет не сходится.</span>
+            </li>
+            <li className="flex gap-4 items-start">
+              <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span className="text-lg font-medium leading-tight">Не можем согласовать данные между отделами.</span>
+            </li>
+            <li className="flex gap-4 items-start">
+              <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span className="text-lg font-medium leading-tight">Не можем автоматизировать, сначала нужно разобраться с данными.</span>
             </li>
           </ul>
         </div>
@@ -137,10 +145,12 @@ export default function Home() {
         </div>
         <div className="md:col-span-2 space-y-6">
           <p className="text-xl leading-relaxed">
-            Меня зовут Оксана Эдельман. Я - финансовый диагност и помогаю собственникам и руководителям среднего и крупного бизнеса увидеть реальную картину их операционных и финансовых процессов. Моя задача — не критиковать, а дать твердую опору для принятия решений.
+            Меня зовут Оксана Эдельман.<br/>
+            Я - управленческий аналитик.<br/>
+            Специализируюсь на восстановлении достоверной модели существующих бизнес-процессов. Работаю на стыке данных, процессов и решений.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            В основе моего подхода — системный анализ и многолетний опыт работы с корпоративными структурами, где сложность процессов часто скрывает неэффективность. Я фокусируюсь на поиске корневых причин, а не на лечении симптомов.
+            Моя задача – собрать разрозненную информацию, выявить противоречия и восстановить единую картину процесса, которой можно доверять.
           </p>
           <div className="flex flex-wrap gap-12 pt-6 grayscale opacity-60">
             <div className="font-bold tracking-tighter text-xl">X5 Group</div>
@@ -151,10 +161,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Как начинается работа */}
+      {/* Блок: Как проходит работа */}
       <section className="border-t pt-16">
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center font-mono">Процесс</h2>
-        <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как начинается работа</h3>
+        <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как проходит работа</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="border p-6 space-y-4">
             <MessageSquare className="w-6 h-6 text-primary" />
@@ -174,7 +184,7 @@ export default function Home() {
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
             <FileText className="w-6 h-6 opacity-80" />
             <h4 className="font-bold">Выводы</h4>
-            <p className="text-sm opacity-80">Карта проблем бизнеса и конкретные рекомендации.</p>
+            <p className="text-sm opacity-80">Карта искажений процесса и конкретные рекомендации.</p>
           </div>
         </div>
       </section>
@@ -187,28 +197,28 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-2">
             <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
               <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 1: КАЛИБРОВКА</div>
-              <h4 className="font-bold text-lg mb-2">A0: Финчек</h4>
-              <p className="text-sm text-muted-foreground">Экспресс-ясность. Поиск корневой проблемы и разрыва as is → to be.</p>
+              <h4 className="font-bold text-lg mb-2">Калибровка</h4>
+              <p className="text-sm text-muted-foreground">Идентификация проблемы клиента. Сбор источников.</p>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 flex flex-col gap-2 relative">
               <div className="bg-primary text-primary-foreground p-6">
-                <div className="text-xs font-mono font-bold mb-2 opacity-80">ШАГ 2: ВХОДНАЯ ЯСНОСТЬ</div>
+                <div className="text-xs font-mono font-bold mb-2 opacity-80">ШАГ 2: ЯСНОСТЬ ДАННЫХ</div>
                 <h4 className="font-bold text-lg mb-2">Уровень A</h4>
-                <p className="text-sm opacity-90">Точечное восстановление управляемости в конкретном контуре (ДЗ, Платежи).</p>
+                <p className="text-sm opacity-90">Построение единой модели данных "Что реально существует?"</p>
               </div>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 bg-secondary/30 border border-border/50 p-6 relative">
-              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 3: СИСТЕМНОСТЬ</div>
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 3: ЯСНОСТЬ ПРОЦЕССА</div>
               <h4 className="font-bold text-lg mb-2">Уровень B</h4>
-              <p className="text-sm text-muted-foreground">Расширенная диагностика. Связка денег, решений и действий.</p>
+              <p className="text-sm text-muted-foreground">Построение аналитической карты. Управленческая карта реальности, связи данных и процессов "Как это работает сегодня?"</p>
               <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-px bg-border z-10"></div>
             </div>
             <div className="flex-1 bg-secondary/10 border border-dashed border-primary/50 p-6">
-              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 4: СБОРКА / НАДЗОР</div>
-              <h4 className="font-bold text-lg mb-2">Уровни C и D</h4>
-              <p className="text-sm text-muted-foreground">Интеграция результатов и методологическое сопровождение изменений.</p>
+              <div className="text-xs font-mono font-bold mb-2 text-primary">ШАГ 4: СИСТЕМНОСТЬ</div>
+              <h4 className="font-bold text-lg mb-2">Уровень C</h4>
+              <p className="text-sm text-muted-foreground">Построение навигационной карты. Карта навигации и направлений изменений "Что можно делать дальше?"</p>
             </div>
           </div>
         </div>
@@ -256,19 +266,23 @@ export default function Home() {
             <ul className="space-y-4">
               <li className="flex gap-3 items-center text-lg">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>временное погружение</span>
+                <span>восстановление существующего процесса (As Is)</span>
               </li>
               <li className="flex gap-3 items-center text-lg">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>анализ ограниченного контура</span>
+                <span>объединение данных из разных источников</span>
               </li>
               <li className="flex gap-3 items-center text-lg">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>работа с причинами</span>
+                <span>выявление противоречий</span>
               </li>
               <li className="flex gap-3 items-center text-lg">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>восстановление логики</span>
+                <span>построение единой модели</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>основа для дальнейших изменений</span>
               </li>
             </ul>
           </div>
@@ -294,6 +308,10 @@ export default function Home() {
               <li className="flex gap-3 items-center text-lg opacity-80">
                 <XCircle className="w-5 h-5 text-destructive shrink-0" />
                 <span>обещание финансового результата</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>разработка будущего процесса (To Be)</span>
               </li>
             </ul>
           </div>

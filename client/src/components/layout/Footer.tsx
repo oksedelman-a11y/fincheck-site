@@ -14,7 +14,7 @@ export default function Footer() {
           <span className="font-display font-bold text-lg tracking-tight">Финчек</span>
           <p className="text-xs italic text-muted-foreground mt-1 mb-3">Диагностика как услуга</p>
           <p className="text-sm text-muted-foreground max-w-sm">
-            Системная архитектура управленческой диагностики для владельцев и руководителей бизнеса.
+            Управленческий анализ данных и процессов для восстановления основания управленческих решений.
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-muted-foreground items-start md:items-center">
