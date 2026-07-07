@@ -26,7 +26,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/catalog" component={Catalog} />
           <Route path="/product/:id" component={ProductDetails} />
-          <Route path="/methodology" component={Methodology} />
+          <Route path="/method" component={Methodology} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/offer" component={Offer} />
