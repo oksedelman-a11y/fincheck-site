@@ -208,9 +208,6 @@ export default function PayablesQuiz() {
                   <li>• контроль сроков оплаты</li>
                   <li>• оптимизация условий работы с поставщиками</li>
                 </ul>
-                <p className="text-sm italic text-muted-foreground pt-2">
-                  Это соответствует услуге <strong>A2.AP</strong> — анализ кредиторской задолженности.
-                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

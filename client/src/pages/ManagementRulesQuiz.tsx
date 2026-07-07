@@ -230,9 +230,6 @@ export default function ManagementRulesQuiz() {
                 <p className="text-sm italic text-muted-foreground pt-2">
                   Результат — краткие и применимые правила, которыми реально пользуются.
                 </p>
-                <p className="text-sm italic text-muted-foreground">
-                  Это соответствует услуге <strong>B5</strong> — декомпозиция регламентов и инструкций.
-                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

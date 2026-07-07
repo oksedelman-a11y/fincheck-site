@@ -223,9 +223,6 @@ export default function ProfitabilityQuiz() {
                   <li>• структура операционных расходов</li>
                   <li>• выявление точек утечки прибыли</li>
                 </ul>
-                <p className="text-sm italic text-muted-foreground pt-2">
-                  Это соответствует услуге <strong>B1.PL</strong> — анализ прибыльности и структуры P&L.
-                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

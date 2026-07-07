@@ -17,10 +17,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { href: "/", label: "Обзор" },
+    { href: "/", label: "Главная" },
     { href: "/catalog", label: "Каталог услуг" },
     { href: "/method", label: "Методология" },
-    { href: "/pricing", label: "Экспресс-диагностика" },
+    { href: "/express", label: "Экспресс-диагностика" },
   ];
 
   const handleNavClick = (href: string) => {

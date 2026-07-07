@@ -228,9 +228,6 @@ export default function CashFlowQuiz() {
                   <li>• синхронизация сроков платежей</li>
                   <li>• построение прогноза cash flow</li>
                 </ul>
-                <p className="text-sm italic text-muted-foreground pt-2">
-                  Это соответствует услуге <strong>B2.CF</strong> — анализ денежного потока и ликвидности.
-                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

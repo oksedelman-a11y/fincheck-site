@@ -192,23 +192,23 @@ export default function Home() {
           </div>
           
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
-            <div className="text-xs font-mono font-bold mb-2 opacity-80">3. Что получает клиент</div>
+            <div className="text-xs font-mono font-bold mb-2 opacity-80">Что получает клиент</div>
             
             <div className="space-y-4">
               <div>
-                <h4 className="font-bold text-sm">Уровень А</h4>
+                <h4 className="font-bold text-sm">1. Модель данных</h4>
                 <p className="text-sm opacity-90 font-medium">Модель данных (excel).</p>
                 <p className="text-sm opacity-80">Единая согласованная модель процесса.</p>
               </div>
               
               <div>
-                <h4 className="font-bold text-sm">Уровень B</h4>
+                <h4 className="font-bold text-sm">2. Аналитическая карта</h4>
                 <p className="text-sm opacity-90 font-medium">Аналитическая карта управленческой реальности (pdf).</p>
                 <p className="text-sm opacity-80">Связи данных, процессов, ответственности и выявленных противоречий.</p>
               </div>
               
               <div>
-                <h4 className="font-bold text-sm">Уровень C</h4>
+                <h4 className="font-bold text-sm">3. Карта управленческих изменений</h4>
                 <p className="text-sm opacity-90 font-medium">Карта управленческих изменений (pdf).</p>
                 <p className="text-sm opacity-80">Зависимости между выявленными проблемами, необходимыми действиями и ожидаемыми результатами.</p>
               </div>
