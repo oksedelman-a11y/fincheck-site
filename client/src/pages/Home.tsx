@@ -351,13 +351,26 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-balance">
           Готовы вернуть управляемость?
         </h2>
-        <Button 
-          asChild
-          size="lg" 
-          className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
-        >
-          <a href="mailto:finance-check@mail.ru">Запросить диагностику</a>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button 
+            asChild
+            size="lg" 
+            className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
+          >
+            <a href="mailto:finance-check@mail.ru">Запросить диагностику</a>
+          </Button>
+          <Button 
+            asChild
+            variant="outline"
+            size="lg" 
+            className="rounded-none font-bold px-10 h-14 text-base border-2 hover:bg-secondary/20 transition-all flex items-center gap-2"
+          >
+            <a href="/fincheck-presentation.pptx" download>
+              <FileText className="w-5 h-5" />
+              Скачать презентацию
+            </a>
+          </Button>
+        </div>
       </section>
 
       {/* Блок Контакты */}

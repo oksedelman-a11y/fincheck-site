@@ -18,6 +18,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-muted-foreground items-start md:items-center">
+          <a href="/fincheck-presentation.pptx" download className="hover:text-foreground transition-colors font-medium">Скачать презентацию</a>
           <Link href="/privacy" className="hover:text-foreground transition-colors">Политика конфиденциальности</Link>
           <Link href="/offer" className="hover:text-foreground transition-colors">Публичная оферта</Link>
           
