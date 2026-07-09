@@ -45,7 +45,7 @@ export default function Home() {
           <Button
             variant="default"
             size="icon"
-            onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })}
+            onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
             className="rounded-none w-14 h-14 bg-primary hover:bg-primary/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-primary/30 transition-all group shrink-0"
             title="Вниз"
           >
@@ -197,20 +197,17 @@ export default function Home() {
             
             <div className="space-y-4">
               <div>
-                <h4 className="font-bold text-sm">1. Модель данных</h4>
-                <p className="text-sm opacity-90 font-medium">Модель данных (excel).</p>
+                <h4 className="font-bold text-sm mb-1">1. Модель данных процесса (excel).</h4>
                 <p className="text-sm opacity-80">Единая согласованная модель процесса.</p>
               </div>
               
               <div>
-                <h4 className="font-bold text-sm">2. Аналитическая карта</h4>
-                <p className="text-sm opacity-90 font-medium">Аналитическая карта управленческой реальности (pdf).</p>
+                <h4 className="font-bold text-sm mb-1">2. Аналитическая карта процесса (pdf).</h4>
                 <p className="text-sm opacity-80">Связи данных, процессов, ответственности и выявленных противоречий.</p>
               </div>
               
               <div>
-                <h4 className="font-bold text-sm">3. Карта управленческих изменений</h4>
-                <p className="text-sm opacity-90 font-medium">Карта управленческих изменений (pdf).</p>
+                <h4 className="font-bold text-sm mb-1">3. Карта управленческих изменений процесса (pdf).</h4>
                 <p className="text-sm opacity-80">Зависимости между выявленными проблемами, необходимыми действиями и ожидаемыми результатами.</p>
               </div>
             </div>
