@@ -64,10 +64,10 @@ export default function Home() {
         />
         <div className="max-w-3xl flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
-            Отчёты есть — но им нельзя доверять?
+            Отчёты есть. Вопрос: можно ли им доверять?
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Финчек — управленческая диагностика,<br/>восстановление достоверной модели бизнес-процесса.
+            Финчек — восстановление достоверной модели процесса.<br/>Чтобы цифры перестали противоречить друг другу, а решения можно было принимать осознанно.
           </p>
           <p className="text-lg font-medium max-w-3xl">
             Ясность через диагностику данных и процессов.<br/>
@@ -104,7 +104,10 @@ export default function Home() {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Ситуация</h2>
           <h3 className="text-3xl font-bold tracking-tight">В какой момент нужна диагностика</h3>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Когда привычные инструменты управления перестают давать результат, а цена ошибки в решениях становится критической.
+            Когда данные разбросаны по разным системам, люди отвечают на один вопрос по-разному, а каждый видит только свой участок процесса.<br/><br/>
+            Результат: недели и месяцы уходят на поиск проблемы.<br/>
+            А время — это деньги.<br/><br/>
+            …и вы понимаете, что дальше тянуть нельзя.
           </p>
         </div>
         
@@ -151,7 +154,29 @@ export default function Home() {
             Специализируюсь на восстановлении достоверной модели существующих бизнес-процессов. Работаю на стыке данных, процессов и решений.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Моя задача – собрать разрозненную информацию, выявить противоречия и восстановить единую картину процесса, которой можно доверять.
+            Моя задача — собрать разрозненную информацию, выявить противоречия и восстановить единую картину процесса, которой можно доверять. Чтобы у вас появилась точка опоры для решений.
+          </p>
+          <ul className="space-y-3 text-lg text-muted-foreground">
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Захожу в конкретный ограниченный контур и разбираюсь, что происходит на самом деле.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Собираю разрозненное в единую картину.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Убираю противоречия и дубли.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Показываю, где процесс разрывается и где никто не отвечает.</span>
+            </li>
+          </ul>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            На выходе — не отчёт, а точка опоры для решений:<br/>
+            что происходит → где проблема → почему → что делать дальше.
           </p>
           <div className="flex flex-wrap gap-12 pt-6 grayscale opacity-60">
             <div className="font-bold tracking-tighter text-xl">X5 Group</div>
@@ -169,6 +194,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border p-6 space-y-4">
             <div className="text-xs font-mono font-bold mb-2 text-primary">1. Финчек-старт</div>
+            <div className="text-xs text-muted-foreground font-medium">Экспресс (3–5 дней)</div>
             <h4 className="font-bold">Экспресс-диагностика процесса</h4>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>определяем проблему;</li>
@@ -183,6 +209,7 @@ export default function Home() {
           
           <div className="border p-6 space-y-4">
             <div className="text-xs font-mono font-bold mb-2 text-primary">2. Финчек</div>
+            <div className="text-xs text-muted-foreground font-medium">Полный (2–4 недели)</div>
             <h4 className="font-bold">Полная реконструкция процесса</h4>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>сбор источников данных;</li>
@@ -194,21 +221,22 @@ export default function Home() {
           
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
             <div className="text-xs font-mono font-bold mb-2 opacity-80">Что получает клиент</div>
+            <p className="text-sm opacity-90 italic">В результате — не просто отчёт, а целостная картина процесса и точка опоры для решений.</p>
             
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-sm mb-1">1. Модель данных процесса (excel).</h4>
-                <p className="text-sm opacity-80">Единая согласованная модель процесса.</p>
+                <p className="text-sm opacity-80">Единый источник правды по процессу.</p>
               </div>
               
               <div>
                 <h4 className="font-bold text-sm mb-1">2. Аналитическая карта процесса (pdf).</h4>
-                <p className="text-sm opacity-80">Связи данных, процессов, ответственности и выявленных противоречий.</p>
+                <p className="text-sm opacity-80">Карта реальности, разрывов и ответственности.</p>
               </div>
               
               <div>
                 <h4 className="font-bold text-sm mb-1">3. Карта управленческих изменений процесса (pdf).</h4>
-                <p className="text-sm opacity-80">Зависимости между выявленными проблемами, необходимыми действиями и ожидаемыми результатами.</p>
+                <p className="text-sm opacity-80">Логика зависимостей: если хотите Х → сначала должно измениться А, Б, В.</p>
               </div>
             </div>
           </div>
