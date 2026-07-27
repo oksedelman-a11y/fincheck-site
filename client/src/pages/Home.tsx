@@ -153,13 +153,10 @@ export default function Home() {
             Я - управленческий аналитик.<br/>
             Специализируюсь на восстановлении достоверной модели существующих бизнес-процессов. Работаю на стыке данных, процессов и решений.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Моя задача — собрать разрозненную информацию, выявить противоречия и восстановить единую картину процесса, которой можно доверять. Чтобы у вас появилась точка опоры для решений.
-          </p>
           <ul className="space-y-3 text-lg text-muted-foreground">
             <li className="flex gap-3 items-start">
               <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span>Захожу в конкретный ограниченный контур и разбираюсь, что происходит на самом деле.</span>
+              <span>Захожу в ограниченный контур и разбираюсь, что происходит на самом деле.</span>
             </li>
             <li className="flex gap-3 items-start">
               <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
