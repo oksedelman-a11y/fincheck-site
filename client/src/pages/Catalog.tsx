@@ -30,53 +30,93 @@ export default function Catalog() {
     { id: 'D', label: 'Уровень D: Сопровождение' }
   ];
 
-  const PricingLogic = () => (
-    <div className="mt-20 pt-16 border-t space-y-12">
+  const ProcessBlock = () => (
+    <div className="mt-20 pt-16 border-t space-y-10">
+
+      {/* Блок: Что именно я проверяю */}
       <div className="max-w-3xl">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Логика ценообразования</h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Прозрачная математическая модель формирования стоимости консалтинговых продуктов. Мы продаем не часы, а конкретные единицы результата.
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Что именно я проверяю внутри процесса</h2>
+        <p className="text-lg font-medium mb-6">Не просто отчёты. Связи.</p>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Я смотрю, как операционное действие превращается в данные, документы и деньги.
+        </p>
+        <p className="text-sm text-muted-foreground mb-2">Например:</p>
+        <div className="bg-secondary/30 border border-border/50 p-4 font-mono text-sm mb-8">
+          заказ → отгрузка → документы → задолженность → оплата
+        </div>
+
+        <p className="font-medium mb-3">Проверяю:</p>
+        <ul className="space-y-2 text-muted-foreground mb-8">
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где появляется каждая сущность;</span></li>
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>из какого источника берутся данные;</span></li>
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>как одна операция связана с другой;</span></li>
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где данные теряются или дублируются;</span></li>
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где возникают расхождения;</span></li>
+          <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>как операционное действие отражается в финансовой картине.</span></li>
+        </ul>
+
+        <p className="font-medium mb-3">Смотрю на процесс целиком</p>
+        <div className="bg-primary text-primary-foreground p-4 font-mono text-sm mb-6">
+          Продажи → Логистика → Документооборот → Финансы
+        </div>
+
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Сопоставляю данные разных источников с тем, как участники процесса понимают происходящее.
+        </p>
+        <p className="text-muted-foreground leading-relaxed mb-8">
+          Потому что одна и та же операция может выглядеть по-разному для каждого отдела.
+        </p>
+
+        <p className="font-medium mb-3">Моя задача — восстановить связь:</p>
+        <p className="text-muted-foreground font-mono text-sm mb-8">
+          что произошло → где это зафиксировано → как это повлияло на деньги → что видит руководитель.
+        </p>
+
+        <div className="border-l-4 border-primary pl-6 space-y-3 mb-8">
+          <p className="font-medium">Я не ищу виноватых</p>
+          <p className="text-muted-foreground leading-relaxed">
+            Я не прихожу проверять, кто работает неправильно.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Я ищу, где именно разрывается логика процесса.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Внешний взгляд позволяет посмотреть на процесс целиком и задать вопросы, которые внутри компании иногда остаются без ответа.
+          </p>
+        </div>
+
+        <p className="font-medium mb-3">На выходе</p>
+        <p className="text-muted-foreground leading-relaxed mb-2">Не просто список расхождений.</p>
+        <p className="text-muted-foreground leading-relaxed mb-2">А восстановленная картина:</p>
+        <p className="text-muted-foreground font-mono text-sm">
+          что происходит → где разрыв → почему он возникает → что с этим можно сделать.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        <section className="space-y-8 text-sm">
-          <div>
-            <h3 className="font-bold mb-4 text-base">Базовая формула</h3>
-            <div className="bg-primary text-primary-foreground p-6 font-mono">
-              Стоимость = (Базовая ставка продукта) × Коэффициент масштаба × Коэффициент сложности
-            </div>
+      {/* Блок: Как формируется стоимость */}
+      <div className="pt-10 border-t max-w-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Как формируется стоимость</h2>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          Стоимость зависит от масштаба и сложности исследуемого процесса: количества источников данных, информационных систем, участников и периода восстановления модели.
+        </p>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Каждый проект оценивается индивидуально после определения границ процесса.
+        </p>
+        <div className="space-y-3">
+          <div className="flex justify-between items-center border-b pb-3">
+            <span className="font-medium">Финчек-старт</span>
+            <span className="font-mono font-bold text-primary">30 000 ₽</span>
           </div>
-
-          <div>
-            <h4 className="font-bold mb-3 border-b pb-2 uppercase tracking-wider text-xs text-muted-foreground">Коэффициент масштаба бизнеса</h4>
-            <ul className="space-y-2">
-              <li className="flex justify-between"><span>До 100 сотрудников</span> <span className="font-mono text-primary font-bold">k = 1.0</span></li>
-              <li className="flex justify-between"><span>100 - 500 сотрудников</span> <span className="font-mono text-primary font-bold">k = 1.5</span></li>
-              <li className="flex justify-between"><span>500 - 2000 сотрудников</span> <span className="font-mono text-primary font-bold">k = 2.2</span></li>
-              <li className="flex justify-between"><span>Свыше 2000 сотрудников</span> <span className="font-mono text-primary font-bold">k = 3.5</span></li>
-            </ul>
+          <div className="flex justify-between items-center border-b pb-3">
+            <span className="font-medium">Полный Финчек</span>
+            <span className="font-mono font-bold text-primary">от 90 000 ₽</span>
           </div>
-        </section>
-
-        <section className="space-y-6 text-sm">
-          <h4 className="font-bold mb-3 border-b pb-2 uppercase tracking-wider text-xs text-muted-foreground">Множители сложности (суммируются)</h4>
-          <ul className="space-y-4">
-            <li className="flex justify-between items-start gap-4">
-              <span className="text-muted-foreground">Распределенная филиальная сеть (более 5 регионов)</span>
-              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+20%</span>
-            </li>
-            <li className="flex justify-between items-start gap-4">
-              <span className="text-muted-foreground">Холдинговая структура (несколько юрлиц с кросс-функциями)</span>
-              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+30%</span>
-            </li>
-            <li className="flex justify-between items-start gap-4">
-              <span className="text-muted-foreground">Высокая срочность (сокращение нормативного срока на 30%)</span>
-              <span className="font-mono bg-secondary px-2 py-1 shrink-0">+50%</span>
-            </li>
-          </ul>
-        </section>
+        </div>
+        <p className="text-sm text-muted-foreground mt-4">
+          Точная стоимость определяется после оценки границ и сложности процесса.
+        </p>
       </div>
+
     </div>
   );
 
@@ -134,7 +174,7 @@ export default function Catalog() {
         </div>
       </div>
       
-      <PricingLogic />
+      <ProcessBlock />
     </div>
   );
 }
