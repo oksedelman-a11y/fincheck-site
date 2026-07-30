@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useRoute, Link } from "wouter";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -15,8 +16,10 @@ import {
   Activity,
   ArrowRight
 } from "lucide-react";
+import ContactModal from "@/components/ContactModal";
 
 export default function ProductDetails() {
+  const [modalOpen, setModalOpen] = useState(false);
   const [match, params] = useRoute("/product/:id");
   const productId = params?.id;
   
@@ -34,6 +37,7 @@ export default function ProductDetails() {
   }
 
   return (
+    <>
     <div className="flex flex-col gap-10 pb-16">
       <div>
         <Link href="/catalog">
@@ -188,12 +192,22 @@ export default function ProductDetails() {
           </div>
           
           <div className="pt-6">
-            <Button className="w-full rounded-none h-14 font-bold text-base shadow-sm" size="lg">
+            <Button
+              className="w-full rounded-none h-14 font-bold text-base shadow-sm"
+              size="lg"
+              onClick={() => setModalOpen(true)}
+            >
               {product.id === 'a1' ? 'Восстановить реальную картину процесса' : 'Понять, что происходит'}
             </Button>
           </div>
         </div>
       </div>
     </div>
+    <ContactModal
+      open={modalOpen}
+      onClose={() => setModalOpen(false)}
+      service={product.title}
+    />
+    </>
   );
 }

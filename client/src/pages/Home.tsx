@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { 
   ArrowRight, 
@@ -27,8 +28,11 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
+import ContactModal from "@/components/ContactModal";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const scrollToContacts = () => {
     const element = document.getElementById('contacts');
     if (element) {
@@ -37,6 +41,7 @@ export default function Home() {
   };
 
   return (
+    <>
     <div className="flex flex-col gap-24 pb-16">
       
       {/* HERO */}
@@ -79,7 +84,7 @@ export default function Home() {
                 size="lg" 
                 className="rounded-none font-bold px-8 h-12 text-base" 
                 data-testid="button-understand"
-                onClick={scrollToContacts}
+                onClick={() => setModalOpen(true)}
               >
                 Разобрать ситуацию
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -376,11 +381,11 @@ export default function Home() {
         </h2>
         <div className="flex flex-col sm:flex-row gap-4">
           <Button 
-            asChild
             size="lg" 
             className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
+            onClick={() => setModalOpen(true)}
           >
-            <a href="mailto:finance-check@mail.ru">Запросить диагностику</a>
+            Запросить диагностику
           </Button>
           <Button 
             asChild
@@ -452,5 +457,8 @@ export default function Home() {
       </section>
 
     </div>
+
+    <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 }
