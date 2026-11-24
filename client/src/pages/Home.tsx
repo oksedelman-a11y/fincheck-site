@@ -69,10 +69,10 @@ export default function Home() {
         />
         <div className="max-w-3xl flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
-            Отчёты есть. Вопрос: можно ли им доверять?
+            Финансовый бэк-офис: данные, которым можно доверять
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Финчек — восстановление достоверной модели процесса.<br/>Метод, который экономит время и деньги.<br/>Чтобы цифры перестали противоречить друг другу, а решения опирались на факты.
+            Наведу порядок в финансах: сверю данные, найду, где теряются деньги, построю отчётность, которой можно верить.
           </p>
           <p className="text-lg font-medium max-w-3xl">
             Ясность через диагностику данных и процессов.<br/>
@@ -86,7 +86,7 @@ export default function Home() {
                 data-testid="button-understand"
                 onClick={() => setModalOpen(true)}
               >
-                Разобрать ситуацию
+                Обсудить задачу
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Link href="/catalog">
@@ -107,7 +107,7 @@ export default function Home() {
       <section className="grid md:grid-cols-2 gap-16 items-start">
         <div className="space-y-6">
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Ситуация</h2>
-          <h3 className="text-3xl font-bold tracking-tight">В какой момент нужна диагностика</h3>
+          <h3 className="text-3xl font-bold tracking-tight">Когда это нужно</h3>
           <p className="text-muted-foreground leading-relaxed text-lg">
             Когда данные разбросаны по разным системам, люди отвечают на один вопрос по-разному, а каждый видит только свой участок процесса.<br/><br/>
             Результат: недели и месяцы уходят на поиск проблемы.<br/>
@@ -195,9 +195,9 @@ export default function Home() {
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как проходит работа</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Финчек-старт</div>
-            <div className="text-xs text-muted-foreground font-medium">Экспресс (3–5 дней)</div>
-            <h4 className="font-bold">Экспресс-диагностика процесса</h4>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Экспресс-разбор</div>
+            <div className="text-xs text-muted-foreground font-medium">3–5 дней</div>
+            <h4 className="font-bold">Экспресс-разбор процесса</h4>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>определяем проблему;</li>
               <li>оцениваем масштаб;</li>
@@ -210,8 +210,8 @@ export default function Home() {
           </div>
           
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Финчек</div>
-            <div className="text-xs text-muted-foreground font-medium">Полный (2–4 недели)</div>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Полный разбор процесса</div>
+            <div className="text-xs text-muted-foreground font-medium">2–4 недели</div>
             <h4 className="font-bold">Полная реконструкция процесса</h4>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>сбор источников данных;</li>
@@ -223,7 +223,7 @@ export default function Home() {
           
           <div className="border p-6 space-y-4 bg-primary text-primary-foreground">
             <div className="text-xs font-mono font-bold mb-2 opacity-80">Что получает клиент</div>
-            <p className="text-sm opacity-90 italic">В результате — не просто отчёт, а целостная картина процесса и точка опоры для решений.</p>
+            <p className="text-sm opacity-90 italic">Вы получаете:</p>
             
             <div className="space-y-4">
               <div>
@@ -295,7 +295,7 @@ export default function Home() {
           <ul className="space-y-4 text-lg">
             <li className="flex gap-3 items-start">
               <ShieldAlert className="w-6 h-6 text-destructive shrink-0 mt-0.5" />
-              <span>можно ограничиться A0</span>
+              <span>можно остановиться на первом этапе</span>
             </li>
             <li className="flex gap-3 items-start">
               <ShieldAlert className="w-6 h-6 text-destructive shrink-0 mt-0.5" />
@@ -303,7 +303,7 @@ export default function Home() {
             </li>
             <li className="flex gap-3 items-start">
               <ShieldAlert className="w-6 h-6 text-destructive shrink-0 mt-0.5" />
-              <span>диагностика ≠ обязательство на внедрение</span>
+              <span>разбор ≠ обязательство на внедрение</span>
             </li>
             <li className="flex gap-3 items-start">
               <ShieldAlert className="w-6 h-6 text-destructive shrink-0 mt-0.5" />

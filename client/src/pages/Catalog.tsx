@@ -156,7 +156,13 @@ export default function Catalog() {
                     </Badge>
                     <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
                   </div>
-                  <h3 className="text-lg font-bold mb-3 tracking-tight leading-tight">{product.title}</h3>
+                   <h3 className="text-lg font-bold mb-3 tracking-tight leading-tight">
+                     {product.id === "a0-fincheck"
+                       ? "1. Финчек-старт. Экспресс-разбор процесса"
+                       : product.id === "a1"
+                         ? "2. Полный разбор процесса"
+                         : product.title}
+                   </h3>
                   <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
                     {product.shortDescription}
                   </p>
