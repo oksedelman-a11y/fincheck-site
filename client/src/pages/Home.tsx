@@ -385,7 +385,7 @@ export default function Home() {
             className="rounded-none font-bold px-10 h-14 text-base shadow-lg hover:shadow-xl transition-all"
             onClick={() => setModalOpen(true)}
           >
-            Запросить диагностику
+            Обсудить задачу
           </Button>
           <Button 
             asChild
