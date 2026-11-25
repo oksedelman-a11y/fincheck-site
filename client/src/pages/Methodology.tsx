@@ -79,7 +79,7 @@ export default function Methodology() {
           </div>
           <div className="space-y-4">
             <h4 className="font-bold flex items-center gap-2"><TrendingUp className="w-5 h-5 text-primary"/> Аналитика как инструмент</h4>
-            <p className="text-sm text-muted-foreground">Аналитика и не является целью работы.<br/>Диагностика возникает как следствие построения непротиворечивой модели процесса.</p>
+            <p className="text-sm text-muted-foreground">Аналитика не является целью работы.<br/>Диагностика возникает как следствие построения непротиворечивой модели процесса.</p>
           </div>
         </div>
       </section>

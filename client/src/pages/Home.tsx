@@ -69,7 +69,7 @@ export default function Home() {
         />
         <div className="max-w-3xl flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
-            Финансовый бэк-офис: данные, которым можно доверять
+            <span className="md:whitespace-nowrap">Финансовый бэк-офис:</span> данные, которым можно доверять
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Наведу порядок в финансах: сверю данные, найду, где теряются деньги, построю отчётность, которой можно верить.
@@ -176,7 +176,7 @@ export default function Home() {
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как проходит работа</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Финчек-старт. Экспресс-разбор процесса (конкретный процесс не определен, нужно понять фокус работ)</div>
+            <div className="text-xs font-mono font-extrabold mb-2 text-primary">1. Финчек-старт. Экспресс-разбор процесса (конкретный процесс не определен, нужно понять фокус работ)</div>
             <div className="text-xs text-muted-foreground font-medium">До 1 недели</div>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>определяем проблему;</li>
@@ -190,8 +190,8 @@ export default function Home() {
           </div>
           
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Финчек. Полный разбор 1 процесса (определенного процесса: расчеты, ДЗ, КЗ, ОДДС, ОДР и т.д)</div>
-            <div className="text-xs text-muted-foreground font-medium">От 2 до 4 недель, зависит от сложности и объёма</div>
+            <div className="text-xs font-mono font-extrabold mb-2 text-primary">2. Финчек. Полный разбор 1 процесса (определенного процесса: расчеты, ДЗ, КЗ, ОДДС, ОДР и т.д)</div>
+            <div className="text-xs text-muted-foreground font-medium">От 2-4 недель, зависит от сложности и объема</div>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>сбор источников данных;</li>
               <li>построение модели данных;</li>
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Блок: Обо мне */}
-      <section className="border-t pt-16 grid md:grid-cols-3 gap-12">
+      <section className="border-t pt-16 grid md:grid-cols-3 gap-8">
         <div className="md:col-span-1">
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Экспертиза</h2>
           <h3 className="text-3xl font-bold tracking-tight">Обо мне</h3>
@@ -424,7 +424,7 @@ export default function Home() {
       </section>
 
       {/* Блок Контакты */}
-      <section id="contacts" className="border-t pt-16 grid md:grid-cols-3 gap-12 scroll-mt-20">
+      <section id="contacts" className="border-t pt-16 grid md:grid-cols-3 gap-8 scroll-mt-20">
         <div className="md:col-span-1">
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Связь</h2>
           <h3 className="text-3xl font-bold tracking-tight">Контакты</h3>
