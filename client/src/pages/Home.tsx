@@ -103,19 +103,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: В какой момент нужна управленческая диагностика */}
+      {/* Блок: Ситуация и результат */}
       <section className="grid md:grid-cols-2 gap-16 items-start">
         <div className="space-y-6">
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Ситуация</h2>
-          <h3 className="text-3xl font-bold tracking-tight">Когда это нужно</h3>
+          <h3 className="text-3xl font-bold tracking-tight">Когда это нужно?</h3>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Когда данные разбросаны по разным системам, люди отвечают на один вопрос по-разному, а каждый видит только свой участок процесса.<br/><br/>
-            Результат: недели и месяцы уходят на поиск проблемы.<br/>
-            А время — это деньги.<br/><br/>
-            …и вы понимаете, что дальше тянуть нельзя.
+            Вам нужно навести порядок в данных, но делать это параллельно с основной работой тяжело: нет времени сидеть над сверками, а каждый отдел отвечает на один и тот же вопрос по-разному.
           </p>
         </div>
-        
+
         <div className="space-y-6 bg-secondary/30 p-8 border border-border/50">
           <ul className="space-y-6">
             <li className="flex gap-4 items-start">
@@ -146,47 +143,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Обо мне */}
-      <section className="border-t pt-16 grid md:grid-cols-3 gap-12">
-        <div className="md:col-span-1">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Экспертиза</h2>
-          <h3 className="text-3xl font-bold tracking-tight">Обо мне</h3>
-        </div>
-        <div className="md:col-span-2 space-y-6">
-          <p className="text-xl leading-relaxed">
-            Меня зовут Оксана Эдельман.<br/>
-            Я - управленческий аналитик.<br/>
-            Специализируюсь на восстановлении достоверной модели существующих бизнес-процессов. Работаю на стыке данных, процессов и решений.
-          </p>
-          <ul className="space-y-3 text-lg text-muted-foreground">
-            <li className="flex gap-3 items-start">
-              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span>Захожу в ограниченный контур и разбираюсь, что происходит на самом деле.</span>
-            </li>
-            <li className="flex gap-3 items-start">
-              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span>Собираю разрозненное в единую картину.</span>
-            </li>
-            <li className="flex gap-3 items-start">
-              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span>Убираю противоречия и дубли.</span>
-            </li>
-            <li className="flex gap-3 items-start">
-              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
-              <span>Показываю, где процесс разрывается и где никто не отвечает.</span>
-            </li>
-          </ul>
+      <section className="border-t pt-16">
+        <div className="max-w-3xl mb-8">
+          <h3 className="text-3xl font-bold tracking-tight mb-4">Что вы получаете?</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            На выходе — не отчёт, а точка опоры для решений:<br/>
-            что происходит → где проблема → почему → что делать дальше.
+            Я проведу интервью, разберусь в ситуации вместо вас и дам четкий план действий. Мой результат для вас — это:
           </p>
-          <div className="flex flex-wrap gap-12 pt-6 grayscale opacity-60">
-            <div className="font-bold tracking-tighter text-xl">X5 Group</div>
-            <div className="font-bold tracking-tighter text-xl">Магнит</div>
-            <div className="font-bold tracking-tighter text-xl">Мегафон</div>
-            <div className="font-bold tracking-tighter text-xl">Arenadata</div>
-          </div>
         </div>
+        <ul className="grid md:grid-cols-2 gap-6">
+          <li className="flex gap-4 items-start border p-6">
+            <FileText className="w-5 h-5 text-primary shrink-0 mt-1" />
+            <span><strong>Понятный отчёт</strong> о том, что происходит с вашими данными на самом деле.</span>
+          </li>
+          <li className="flex gap-4 items-start border p-6">
+            <FileText className="w-5 h-5 text-primary shrink-0 mt-1" />
+            <span><strong>Списки расхождений:</strong> где цифры не сходятся, где дубли, а где не хватает информации.</span>
+          </li>
+          <li className="flex gap-4 items-start border p-6">
+            <Map className="w-5 h-5 text-primary shrink-0 mt-1" />
+            <span><strong>Карта связей:</strong> как одно и то же явление называют в разных отделах.</span>
+          </li>
+          <li className="flex gap-4 items-start border p-6">
+            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+            <span><strong>База для автоматизации:</strong> вы поймёте, что именно нужно чинить, чтобы внедрять софт и сэкономить на этом.</span>
+          </li>
+        </ul>
       </section>
 
       {/* Блок: Как проходит работа */}
@@ -241,6 +222,67 @@ export default function Home() {
                 <p className="text-sm opacity-80">Логика зависимостей: если хотите Х → сначала должно измениться А, Б, В.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Блок: Что это за работа */}
+      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Что это за работа</h2>
+            <h3 className="text-3xl font-bold tracking-tight mb-6">Это:</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>восстановление существующего процесса (As Is)</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>объединение данных из разных источников</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>выявление противоречий</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>построение единой модели</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                <span>основа для дальнейших изменений</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
+            <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>внедрение</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>аутсорсинг управления</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>управление вместо собственника</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>обещание финансового результата</span>
+              </li>
+              <li className="flex gap-3 items-center text-lg opacity-80">
+                <XCircle className="w-5 h-5 text-destructive shrink-0" />
+                <span>разработка будущего процесса (To Be)</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -313,63 +355,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Блок: Что это за работа */}
-      <section className="border-t pt-16 grid md:grid-cols-2 gap-16">
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Что это за работа</h2>
-            <h3 className="text-3xl font-bold tracking-tight mb-6">Это:</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>восстановление существующего процесса (As Is)</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>объединение данных из разных источников</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>выявление противоречий</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>построение единой модели</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                <span>основа для дальнейших изменений</span>
-              </li>
-            </ul>
-          </div>
+      {/* Блок: Обо мне */}
+      <section className="border-t pt-16 grid md:grid-cols-3 gap-12">
+        <div className="md:col-span-1">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono">Экспертиза</h2>
+          <h3 className="text-3xl font-bold tracking-tight">Обо мне</h3>
         </div>
-
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-mono text-destructive">Границы</h2>
-            <h3 className="text-3xl font-bold tracking-tight mb-6">Это не:</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>внедрение</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>аутсорсинг управления</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>управление вместо собственника</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>обещание финансового результата</span>
-              </li>
-              <li className="flex gap-3 items-center text-lg opacity-80">
-                <XCircle className="w-5 h-5 text-destructive shrink-0" />
-                <span>разработка будущего процесса (To Be)</span>
-              </li>
-            </ul>
+        <div className="md:col-span-2 space-y-6">
+          <p className="text-xl leading-relaxed">
+            Меня зовут Оксана Эдельман.<br/>
+            Я - управленческий аналитик.<br/>
+            Специализируюсь на восстановлении достоверной модели существующих бизнес-процессов. Работаю на стыке данных, процессов и решений.
+          </p>
+          <ul className="space-y-3 text-lg text-muted-foreground">
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Захожу в ограниченный контур и разбираюсь, что происходит на самом деле.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Собираю разрозненное в единую картину.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Убираю противоречия и дубли.</span>
+            </li>
+            <li className="flex gap-3 items-start">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+              <span>Показываю, где процесс разрывается и где никто не отвечает.</span>
+            </li>
+          </ul>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            На выходе — не отчёт, а точка опоры для решений:<br/>
+            что происходит → где проблема → почему → что делать дальше.
+          </p>
+          <div className="flex flex-wrap gap-12 pt-6 grayscale opacity-60">
+            <div className="font-bold tracking-tighter text-xl">X5 Group</div>
+            <div className="font-bold tracking-tighter text-xl">Магнит</div>
+            <div className="font-bold tracking-tighter text-xl">Мегафон</div>
+            <div className="font-bold tracking-tighter text-xl">Arenadata</div>
           </div>
         </div>
       </section>
