@@ -10,9 +10,8 @@ export default function Methodology() {
       <div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Метод и принципы</h1>
         <div className="bg-primary text-primary-foreground p-8 md:p-12 mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Услуга управленческой ясности бизнес-процесса «Финчек»</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Финчек — это метод управленческой ясности.</h2>
           <p className="text-xl opacity-90 leading-relaxed max-w-2xl">
-            Цель — восстановить картину существующего процесса, которой можно доверять при принятии управленческих решений.<br/><br/>
             Сначала понять, что происходит → Потом решать, что менять.
           </p>
         </div>
