@@ -176,9 +176,8 @@ export default function Home() {
         <h3 className="text-3xl font-bold tracking-tight mb-12 text-center">Как проходит работа</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Экспресс-разбор</div>
-            <div className="text-xs text-muted-foreground font-medium">3–5 дней</div>
-            <h4 className="font-bold">Экспресс-разбор процесса</h4>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">1. Финчек-старт. Экспресс-разбор процесса (конкретный процесс не определен, нужно понять фокус работ)</div>
+            <div className="text-xs text-muted-foreground font-medium">До 1 недели</div>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>определяем проблему;</li>
               <li>оцениваем масштаб;</li>
@@ -191,9 +190,8 @@ export default function Home() {
           </div>
           
           <div className="border p-6 space-y-4">
-            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Полный разбор процесса</div>
-            <div className="text-xs text-muted-foreground font-medium">2–4 недели</div>
-            <h4 className="font-bold">Полная реконструкция процесса</h4>
+            <div className="text-xs font-mono font-bold mb-2 text-primary">2. Финчек. Полный разбор 1 процесса (определенного процесса: расчеты, ДЗ, КЗ, ОДДС, ОДР и т.д)</div>
+            <div className="text-xs text-muted-foreground font-medium">От 2 до 4 недель, зависит от сложности и объёма</div>
             <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
               <li>сбор источников данных;</li>
               <li>построение модели данных;</li>

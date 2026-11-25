@@ -108,6 +108,67 @@ export default function Methodology() {
         </div>
       </section>
 
+      <section className="border-t pt-16">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">Что именно я проверяю внутри процесса</h2>
+          <p className="text-lg font-medium mb-6">Не просто отчёты. Связи.</p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Я смотрю, как операционное действие превращается в данные, документы и деньги.
+          </p>
+          <p className="text-sm text-muted-foreground mb-2">Например:</p>
+          <div className="bg-secondary/30 border border-border/50 p-4 font-mono text-sm mb-8">
+            заказ → отгрузка → документы → задолженность → оплата
+          </div>
+
+          <p className="font-medium mb-3">Проверяю:</p>
+          <ul className="space-y-2 text-muted-foreground mb-8">
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где появляется каждая сущность;</span></li>
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>из какого источника берутся данные;</span></li>
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>как одна операция связана с другой;</span></li>
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где данные теряются или дублируются;</span></li>
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где возникают расхождения;</span></li>
+            <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>как операционное действие отражается в финансовой картине.</span></li>
+          </ul>
+
+          <p className="font-medium mb-3">Смотрю на процесс целиком</p>
+          <div className="bg-primary text-primary-foreground p-4 font-mono text-sm mb-6">
+            Продажи → Логистика → Документооборот → Финансы
+          </div>
+
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Сопоставляю данные разных источников с тем, как участники процесса понимают происходящее.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-8">
+            Потому что одна и та же операция может выглядеть по-разному для каждого отдела.
+          </p>
+
+          <p className="font-medium mb-3">Моя задача — восстановить связь:</p>
+          <p className="text-muted-foreground font-mono text-sm mb-8">
+            что произошло → где это зафиксировано → как это повлияло на деньги → что видит руководитель.
+          </p>
+
+          <div className="border-l-4 border-primary pl-6 space-y-3 mb-8">
+            <p className="font-medium">Я не ищу виноватых</p>
+            <p className="text-muted-foreground leading-relaxed">
+              Я не прихожу проверять, кто работает неправильно.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Я ищу, где именно разрывается логика процесса.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Внешний взгляд позволяет посмотреть на процесс целиком и задать вопросы, которые внутри компании иногда остаются без ответа.
+            </p>
+          </div>
+
+          <p className="font-medium mb-3">На выходе</p>
+          <p className="text-muted-foreground leading-relaxed mb-2">Не просто список расхождений.</p>
+          <p className="text-muted-foreground leading-relaxed mb-2">А восстановленная картина:</p>
+          <p className="text-muted-foreground font-mono text-sm">
+            что происходит → где разрыв → почему он возникает → что с этим можно сделать.
+          </p>
+        </div>
+      </section>
+
       <section className="border-l-4 border-muted pl-6 py-2 space-y-4 text-muted-foreground">
         <h2 className="text-2xl font-bold text-foreground mb-4">Ограничения и честные рамки</h2>
         <div className="grid md:grid-cols-2 gap-8">
