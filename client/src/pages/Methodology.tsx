@@ -1,18 +1,7 @@
-import { methodologyPoints } from "@/lib/data";
 import { 
-  CheckCircle2, 
-  XCircle, 
-  ShieldAlert, 
-  Target, 
   GitCommit, 
-  Search, 
-  Activity, 
-  ArrowRight,
-  TrendingUp,
   Map,
-  Eye,
-  EyeOff,
-  Users
+  Search
 } from "lucide-react";
 
 export default function Methodology() {
@@ -29,46 +18,19 @@ export default function Methodology() {
         </div>
       </div>
 
-      <section className="grid md:grid-cols-2 gap-12 border-b pb-16">
-        <div>
-          <h2 className="text-xl font-bold mb-4 font-mono uppercase tracking-widest text-muted-foreground text-sm">Роль специалиста</h2>
-          <h3 className="text-2xl font-bold mb-4">Внешний управленческий аналитик</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Независимо восстанавливаю фактическую модель отдельного процесса на основе данных, документов и интервью.
-          </p>
-        </div>
-        <div>
-          <h2 className="text-xl font-bold mb-4 font-mono uppercase tracking-widest text-muted-foreground text-sm">Целевая аудитория</h2>
-          <h3 className="text-2xl font-bold mb-4">Собственники, ЛПР и руководители функций</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Для тех, кому необходимо понять, что происходит в процессе на самом деле, прежде чем принимать решения или начинать изменения.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-secondary/30 p-8 md:p-12 border border-border/50">
-        <h2 className="text-xl font-bold mb-6">Когда услуга необходима</h2>
-        <div className="grid sm:grid-cols-2 gap-6">
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><span>•</span> отчеты противоречат друг другу</li>
-            <li className="flex gap-2"><span>•</span> невозможно определить, каким данным доверять</li>
-            <li className="flex gap-2"><span>•</span> данные находятся в разных системах и Excel</li>
-          </ul>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><span>•</span> процесс зависит от отдельных сотрудников</li>
-            <li className="flex gap-2"><span>•</span> невозможно автоматизировать процесс без подготовки</li>
-            <li className="flex gap-2"><span>•</span> решения принимаются при высокой степени неопределенности</li>
-          </ul>
-        </div>
+      <section className="border-b pb-16">
+        <h2 className="text-2xl font-bold mb-4">Кто я и зачем</h2>
+        <p className="text-muted-foreground leading-relaxed max-w-3xl">
+          Я — внешний управленческий аналитик с финансовым бэкграудом в корпорациях и управлении миллиардными финансовыми потоками. Моя задача — помочь навести порядок: собрать разрозненные данные, документы и процессы сотрудников в единую картину. Я работаю с собственниками и руководителями, которым важно опираться на факты, а не на догадки или противоречивые отчеты.
+        </p>
       </section>
 
       <section className="space-y-8 border-b pb-16">
-        <h2 className="text-2xl font-bold">Метод «Финчек»</h2>
+        <div className="space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold">Метод «Финчек»: Clean Data + AS IS</h2>
+          <p className="text-sm text-muted-foreground">Я не придумываю, как должно быть. Я восстанавливаю то, что есть на самом деле (подход AS IS), и параллельно навожу порядок в данных.</p>
+        </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <h4 className="font-bold flex items-center gap-2"><Map className="w-5 h-5 text-primary"/> Clean Data + AS IS</h4>
-            <p className="text-sm text-muted-foreground">Авторская методология объединяет практики качества данных и бизнес-анализа (AS IS).<br/>Цель — восстановить достоверную информационную модель существующего процесса без проектирования будущего состояния.</p>
-          </div>
           <div className="space-y-4">
             <h4 className="font-bold flex items-center gap-2"><Search className="w-5 h-5 text-primary"/> Метод вопросов</h4>
             <p className="text-sm text-muted-foreground">Что → Кто → Когда → Как → Зачем<br/>Каждый элемент процесса анализируется через вопросы, позволяющие восстановить его назначение, происхождение, владельца и роль в системе.</p>
@@ -77,34 +39,6 @@ export default function Methodology() {
             <h4 className="font-bold flex items-center gap-2"><GitCommit className="w-5 h-5 text-primary"/> Метод связей</h4>
             <p className="text-sm text-muted-foreground">Концентрация → Вопросы → Связи<br/>3 плоскости: данные / процессы / решения. Ни один отчет не живет в вакууме.</p>
           </div>
-          <div className="space-y-4">
-            <h4 className="font-bold flex items-center gap-2"><TrendingUp className="w-5 h-5 text-primary"/> Аналитика как инструмент</h4>
-            <p className="text-sm text-muted-foreground">Аналитика не является целью работы.<br/>Диагностика возникает как следствие построения непротиворечивой модели процесса.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="grid md:grid-cols-2 gap-12 border-b pb-16">
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Результат</h2>
-          <ul className="space-y-4">
-            <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> единая модель данных процесса</li>
-            <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> аналитическая карта процесса</li>
-            <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> карта управленческих изменений</li>
-            <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> выявленные противоречия и ограничения</li>
-            <li className="flex gap-3 items-center"><CheckCircle2 className="w-5 h-5 text-primary"/> основа для дальнейших управленческих и технологических решений</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Принципы работы</h2>
-          <ul className="space-y-4">
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> независимость</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> временное участие</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> скорость</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> работа с «сырыми» данными</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> ограниченный контур</li>
-            <li className="flex gap-3 items-center text-muted-foreground"><span>•</span> экономически оправдано</li>
-          </ul>
         </div>
       </section>
 
@@ -115,11 +49,6 @@ export default function Methodology() {
           <p className="text-muted-foreground leading-relaxed mb-6">
             Я смотрю, как операционное действие превращается в данные, документы и деньги.
           </p>
-          <p className="text-sm text-muted-foreground mb-2">Например:</p>
-          <div className="bg-secondary/30 border border-border/50 p-4 font-mono text-sm mb-8">
-            заказ → отгрузка → документы → задолженность → оплата
-          </div>
-
           <p className="font-medium mb-3">Проверяю:</p>
           <ul className="space-y-2 text-muted-foreground mb-8">
             <li className="flex gap-2"><span className="text-primary shrink-0">•</span><span>где появляется каждая сущность;</span></li>
@@ -135,18 +64,6 @@ export default function Methodology() {
             Продажи → Логистика → Документооборот → Финансы
           </div>
 
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            Сопоставляю данные разных источников с тем, как участники процесса понимают происходящее.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            Потому что одна и та же операция может выглядеть по-разному для каждого отдела.
-          </p>
-
-          <p className="font-medium mb-3">Моя задача — восстановить связь:</p>
-          <p className="text-muted-foreground font-mono text-sm mb-8">
-            что произошло → где это зафиксировано → как это повлияло на деньги → что видит руководитель.
-          </p>
-
           <div className="border-l-4 border-primary pl-6 space-y-3 mb-8">
             <p className="font-medium">Я не ищу виноватых</p>
             <p className="text-muted-foreground leading-relaxed">
@@ -161,8 +78,6 @@ export default function Methodology() {
           </div>
 
           <p className="font-medium mb-3">На выходе</p>
-          <p className="text-muted-foreground leading-relaxed mb-2">Не просто список расхождений.</p>
-          <p className="text-muted-foreground leading-relaxed mb-2">А восстановленная картина:</p>
           <p className="text-muted-foreground font-mono text-sm">
             что происходит → где разрыв → почему он возникает → что с этим можно сделать.
           </p>
